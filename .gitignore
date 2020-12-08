@@ -1,9 +1,9 @@
 #Servers
-#/Servers/
+/Servers/
 
 #metadata
-#/.metadata/
+/.metadata/
 
 # etc
-#.classpath
-#.settings
+.classpath
+.settings
