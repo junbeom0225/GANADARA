@@ -5,5 +5,5 @@
 /.metadata/
 
 # etc
-.classpath
-.settings
+#.classpath
+#.settings
