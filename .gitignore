@@ -3,3 +3,7 @@
 
 #metadata
 /.metadata/
+
+# etc
+.classpath
+.settings
