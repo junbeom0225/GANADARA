@@ -1,0 +1,10 @@
+#Servers
+/Servers/
+
+#metadata
+/.metadata/
+
+# etc
+.classpath
+.settings
+
