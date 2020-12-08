@@ -6,4 +6,8 @@
 
 # etc
 .classpath
+<<<<<<< HEAD
 .settings
+=======
+.settings
+>>>>>>> b8187c04c2b86c21b1c040071a94c1a5ee9199d4
