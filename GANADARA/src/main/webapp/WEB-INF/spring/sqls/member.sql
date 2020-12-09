@@ -18,3 +18,9 @@ CREATE TABLE MEMBER(
 	CONSTRAINT MEM_NIC UNIQUE(MEMBER_NIC),
 	CONSTRAINT MEM_ROLE UNIQUE(MEMBER_ROLE)
 );
+
+select * from member
+
+insert into member
+values(memberseq.nextval, 'user1', 'baezzang', 'aaa@aaaa.com', 'user1', '010-0000-0000', 
+       '901128', 'asia', sysdate, 'N', 'user', 'N')
