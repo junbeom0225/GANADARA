@@ -8,7 +8,7 @@
 	</typeAliases>
 
 	<mappers>
-		<mapper resource="mybatis/daily-mapper.xml" />
+		<mapper resource="mybatis/daily_mapper.xml" />
 	</mappers>
 
 </configuration>
