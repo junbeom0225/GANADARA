@@ -10,11 +10,11 @@
 
 	<h1>Writting Practice</h1>
 
-	<form action="insertres" method="post">
+	<form action="insertres.do" method="post">
 		<table border="1">
 			<tr hidden>
-				<th>writer</th>   <!-- login한 사람이니가 안보이고 login정보에서 member_no가져옴 -->
-				<td><input type="text" name="member_no" value="${login.member_no }" readonly="readonly"/></td>
+				<th>writer</th>   <!-- login한 사람이니가 안보이고 login정보에서 member_no가져옴 login.member_no -->
+				<td><input type="text" name="member_no" value="${dto.member_no }" readonly="readonly"/></td>
 			</tr>
 			<tr>
 				<th>title</th>

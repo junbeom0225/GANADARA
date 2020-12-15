@@ -8,7 +8,8 @@
 	</typeAliases>
 
 	<mappers>
-		<mapper resource="mybatis/daily_mapper.xml" />
+		<mapper resource="mybatis/dailyboard_mapper.xml" />
+		<mapper resource="mybatis/dailyboard_reply_mapper.xml" />
 	</mappers>
 
 </configuration>

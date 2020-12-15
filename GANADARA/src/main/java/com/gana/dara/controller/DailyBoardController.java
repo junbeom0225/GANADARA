@@ -2,21 +2,33 @@ package com.gana.dara.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.gana.dara.biz.DailyBoardReplyBiz;
 import com.gana.dara.biz.DailyBoardBiz;
+import com.gana.dara.dto.DailyBoardDto;
+import com.gana.dara.dto.MentoAnswerDto;
 
 @Controller
 public class DailyBoardController {
 
 	@Autowired
 	private DailyBoardBiz dailybiz;
+	
+	@Autowired
+	private DailyBoardReplyBiz replybiz;
 	
 	@RequestMapping("/list.do")
 	public String selectList(Model model) {
@@ -41,6 +53,31 @@ public class DailyBoardController {
 		*/
 		return "dailyinsert";
 	}
+	
+	@RequestMapping("/insertres.do")
+	public String insertres(DailyBoardDto dto) {
+		int res = dailybiz.insert(dto);
+		if(res>0) {
+			return "redirect:list.do";
+		}
+		return "redirect:insertform.do";
+	}
+	
+	@RequestMapping("/detail.do")
+	public String detail(int db_no,int member_no, Model model) {
+		/*if(member_no == login.member_no)
+		
+		*/
+		model.addAttribute("dbdto", dailybiz.selectOne(db_no));
+	
+		return "dailydetail";
+	}
+	
+
+	
+	
+	
+	
 /*	
 	public void jsResponse(String msg, String url, HttpServletResponse response) throws IOException {
 		PrintWriter out = response.getWriter(); 							

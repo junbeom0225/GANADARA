@@ -10,7 +10,7 @@
 	
 	<insert id="insert" parameterType="dailyBoardDto">
 		INSERT INTO DAILY_BOARD
-		VALUES(DAILYBOARDSEQ.NEXTVAL, #{member_no}, #{db_title}, #{db_content}, SYSDATE, 'N')
+		VALUES(DAILYBOARDSEQ.NEXTVAL, MEMBER_NO, #{db_title}, #{db_content}, SYSDATE, 'N')
 	</insert>
 
 	<select id="selectOne" parameterType="int" resultType="dailyBoardDto">
