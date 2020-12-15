@@ -73,8 +73,28 @@ public class DailyBoardController {
 		return "dailydetail";
 	}
 	
-
-	
+	@RequestMapping("/updateform.do")
+	public String updateForm(Model model, int db_no) {
+		model.addAttribute("dbdto", dailybiz.    selectOne(db_no));
+		
+		return "dailyupdate";
+	}
+	@RequestMapping("/updateres.do")
+	public String updatRes(DailyBoardDto dbdto) {
+		int res = dailybiz.update(dbdto);
+		if(res>0) {
+			return "redirect:detail.do?db_no="+dbdto.getDb_no();
+		}
+		return "redirect:updateform.do?db_no="+dbdto.getDb_no();
+	}
+	@RequestMapping("/delete.do")
+	public String delete(int db_no) {
+		int res = dailybiz.delete(db_no);
+		if(res>0) {
+			return "redirect:list.do";
+		}
+		return "redirect:detail.do?db_no="+db_no;
+	}
 	
 	
 	
