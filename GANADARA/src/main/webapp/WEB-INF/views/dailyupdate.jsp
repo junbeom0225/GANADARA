@@ -27,7 +27,7 @@
 			<tr>
 				<td colspan="2" align="right">
 					<input type="submit" value="modify"/>
-					<input type="button" value="cancel" onclick="location.href='detail.do?db_no=${dbdto.db_no}'"/>
+					<input type="button" value="cancel" onclick="location.href='list.do'"/>
 				</td>
 			</tr>
 		</table>

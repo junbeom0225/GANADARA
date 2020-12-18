@@ -12,9 +12,9 @@
 
 	<form action="insertres.do" method="post">
 		<table border="1">
-			<tr hidden>
+			<tr>
 				<th>writer</th>   <!-- login한 사람이니가 안보이고 login정보에서 member_no가져옴 login.member_no -->
-				<td><input type="text" name="member_no" value="${dto.member_no }" readonly="readonly"/></td>
+				<td>${dto.member_no }</td>
 			</tr>
 			<tr>
 				<th>title</th>
@@ -27,7 +27,7 @@
 			<tr>
 				<td colspan="2" align="right">
 					<input type="submit" value="completed"/>
-					<input type="button" value="list" onclick="location.href='list.do'"/>
+					<input type="button" value="list" onclick="location.href='./list.do'"/>
 				</td>
 			</tr>
 		</table>

@@ -45,7 +45,7 @@
 		</c:choose>
 		<tr>
 			<td colspan="5">
-				<input type="button" value="WRITE" onclick="href.location='insertform.do'"/>
+				<input type="button" value="WRITE" onclick="location.href='./insertform.do'"/>
 			</td>
 		</tr>
 	</table>

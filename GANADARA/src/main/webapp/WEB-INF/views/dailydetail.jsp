@@ -31,9 +31,9 @@
 		</tr>
 		<tr>
 			<td colspan="2" align="right">
-				<input type="button" value="modify" onclick="location.href='updateform.do?db_no=${dbdto.db_no}'"/>
-				<input type="button" value="delete" onclick="location.href='delete.do?db_no=${dbdto.db_no}'"/>
-				<input type="button" value="list" onclick="location.href='list.do'"/>
+				<input type="button" value="modify" onclick="location.href='./updateform.do?db_no=${dbdto.db_no}'"/>
+				<input type="button" value="delete" onclick="location.href='./delete.do?db_no=${dbdto.db_no}'"/>
+				<input type="button" value="list" onclick="location.href='/dara/dailyBoard/list.do'"/>
 			</td>
 		</tr>
 	</table>
@@ -65,7 +65,7 @@
 	//댓글 목록
 	function commentList(){
 		$.ajax({
-			url : 'dara/comment/replylist.do',
+			url : 'replylist.do',
 			type : 'get',
 			data : {'db_no':db_no},
 			success : function(data){
@@ -86,7 +86,7 @@
 	//댓글 등록
 	function commentInsert(insertData){
     $.ajax({
-        url : 'dara/comment/replyinsert.do',
+        url : 'replyinsert.do',
         type : 'post',
         data : insertData,
         success : function(data){
@@ -116,7 +116,7 @@ function commentUpdate(ma_no, ma_content){
 	    var updateContent = $('[name=ma_content_'+ma_no+']').val();
 	    
 	    $.ajax({
-	        url : 'dara/comment/replyupdate.do',
+	        url : 'replyupdate.do',
 	        type : 'post',
 	        data : {'ma_content' : updateContent, 'ma_no' : ma_no},
 	        success : function(data){
@@ -132,7 +132,7 @@ function commentUpdate(ma_no, ma_content){
 	//댓글 삭제 
 	function commentDelete(ma_no){
 	    $.ajax({
-	        url : 'dara/comment/replydelete.do',
+	        url : 'replydelete.do',
 	        type : 'get',
 	        data : {'ma_no' : ma_no},
 	        success : function(data){
