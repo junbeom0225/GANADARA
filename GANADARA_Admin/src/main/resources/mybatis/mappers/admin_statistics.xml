@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gana.dara.mapper.AdminStatisticsDao">
+
+<!--국가별 통계 -->
+	<select id="countAsia" resultType="int">
+		SELECT COUNT(*) FROM MEMBER WHERE MEMBER_CON = 'ASIA'
+	</select>
+	<select id="countEurope" resultType="int">
+		SELECT COUNT(*) FROM MEMBER WHERE MEMBER_CON = 'EUROPE'
+	</select>
+	<select id="countAfrica" resultType="int">
+		SELECT COUNT(*) FROM MEMBER WHERE MEMBER_CON = 'AFRICA'
+	</select>
+	<select id="countNorthAmerica" resultType="int">
+		SELECT COUNT(*) FROM MEMBER WHERE MEMBER_CON = 'NORTH AMERICA'
+	</select>
+	<select id="countAustralia" resultType="int">
+		SELECT COUNT(*) FROM MEMBER WHERE MEMBER_CON = 'AUSTRALIA'
+	</select>
+	<select id="countAntarctica" resultType="int">
+		SELECT COUNT(*) FROM MEMBER WHERE MEMBER_CON = 'ANTARCTICA'
+	</select>
+
+<!-- 일별 통계 -->
+<!-- 연령대별 통계 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</mapper>

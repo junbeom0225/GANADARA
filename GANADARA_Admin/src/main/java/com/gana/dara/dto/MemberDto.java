@@ -16,13 +16,14 @@ public class MemberDto {
 	   private String member_del;
 	   private String member_role;
 	   private String member_daily;
+	   private int mento_no;
 	   
 	   public MemberDto() {
 	   }
 
 	   public MemberDto(int member_no, String member_name, String member_nic, String member_email, String member_pw,
 	         String member_tel, String member_birth, String member_con, Date member_regdate, String member_del,
-	         String member_role, String member_daily) {
+	         String member_role, String member_daily, int mento_no) {
 	      this.member_no = member_no;
 	      this.member_name = member_name;
 	      this.member_nic = member_nic;
@@ -35,6 +36,7 @@ public class MemberDto {
 	      this.member_del = member_del;
 	      this.member_role = member_role;
 	      this.member_daily = member_daily;
+	      this.mento_no = mento_no;
 	   }
 
 	   public int getMember_no() {
@@ -132,6 +134,14 @@ public class MemberDto {
 	   public void setMember_daily(String member_daily) {
 	      this.member_daily = member_daily;
 	   }
+
+		public int getMento_no() {
+			return mento_no;
+		}
+	
+		public void setMento_no(int mento_no) {
+			this.mento_no = mento_no;
+		}
 	   
 
 }
