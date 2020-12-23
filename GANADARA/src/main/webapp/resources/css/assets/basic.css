@@ -221,7 +221,7 @@ body.is-menu-visible #menu {
   -ms-transform: translateX(0);
   transform: translateX(0);
   box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.2);
-  visibility: visible; }              
+  visibility: visible; }          
 
 /* Reset */
 
@@ -1382,7 +1382,6 @@ body.is-menu-visible #menu {
 		justify-content: center;
 		padding: 8em 4em 6em 4em;
 		min-height: 70vh;
-		background-image: url("../../img/assets/gana_bigger.png");
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;

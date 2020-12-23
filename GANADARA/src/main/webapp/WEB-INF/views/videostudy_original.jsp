@@ -30,6 +30,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@ include file="../../resources/css/header.jsp"%>
 
 	<div id="nav">
 		<ul class="menu">
@@ -94,7 +95,7 @@
 	});
 </script>
 
-
+<%@ include file="../../resources/css/footer.jsp"%>
 
 </body>
 </html>

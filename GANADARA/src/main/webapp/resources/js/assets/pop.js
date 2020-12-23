@@ -6,6 +6,23 @@
 
 (function($) {
 	
+	/* 배너 이미지 바꾸기 */ 
+	if($("#edu_grade").val() == '초급'){
+		$("#banner").css('background-image','url("../dara/resources/img/assets/start01_banner.png"');	
+	} else if($("#edu_grade").val() == '중급'){
+		$("#banner").css('background-image','url("../dara/resources/img/assets/start02_banner.png"');
+	}
+	
+	/* poptrox 이벤트 방지 */
+	$('.style2').click(function(){
+		location.href = 'eduword_demo.do';
+		return false;
+	});
+	$('.style3').click(function(){
+		location.href = 'eduspeak_demo.do';
+		return false;
+	});
+	
 	var	$window = $(window),
 		$banner = $('#banner'),
 		$body = $('#top');
@@ -127,20 +144,23 @@
 			$window.on('load', function() {
 
 				var $thumbs = $('.thumbnails');
+				var $button = $('.fit');
 
-				/*if ($thumbs.length > 0)
-					$thumbs.poptrox({
-						onPopupClose: function() { $body.removeClass('is-covered'); },
-						onPopupOpen: function() { $body.addClass('is-covered'); },
-						baseZIndex: 10001,
-						useBodyOverflow: false,
-						overlayColor: '#222226',
-						overlayOpacity: 0.75,
-						popupLoaderText: '',
-						fadeSpeed: 500,
-						usePopupDefaultStyling: false,
-						windowMargin: (skel.breakpoint('small').active ? 5 : 50)
-					});*/
+				if ($thumbs.length > 0)
+				
+						$thumbs.poptrox({
+							onPopupClose: function() { $body.removeClass('is-covered'); },
+							onPopupOpen: function() { $body.addClass('is-covered'); },
+							baseZIndex: 10001,
+							useBodyOverflow: false,
+							overlayColor: '#222226',
+							overlayOpacity: 0.75,
+							popupLoaderText: '',
+							fadeSpeed: 500,
+							usePopupDefaultStyling: false,
+							windowMargin: (skel.breakpoint('small').active ? 5 : 50)
+						});
+				
 
 			});
 
