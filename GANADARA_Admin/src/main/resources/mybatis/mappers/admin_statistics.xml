@@ -22,7 +22,33 @@
 		SELECT COUNT(*) FROM MEMBER WHERE MEMBER_CON = 'ANTARCTICA'
 	</select>
 
-<!-- 일별 통계 -->
+<!-- 일별 통계 18일, 19일, 21일, 22일-->
+	<select id="countDay1" resultType="int">
+		SELECT COUNT(*) AS count
+		FROM MEMBER
+		WHERE SUBSTR(MEMBER_REGDATE, 7, 2) = 18
+		GROUP BY to_char(MEMBER_REGDATE, 'YYYYMMDD')
+	</select>
+	
+	<select id="countDay2" resultType="int">
+		SELECT COUNT(*) AS count
+		FROM MEMBER
+		WHERE SUBSTR(MEMBER_REGDATE, 7, 2) = 19
+		GROUP BY to_char(MEMBER_REGDATE, 'YYYYMMDD')
+	</select>
+	<select id="countDay3" resultType="int">
+		SELECT COUNT(*) AS count
+		FROM MEMBER
+		WHERE SUBSTR(MEMBER_REGDATE, 7, 2) = 21
+		GROUP BY to_char(MEMBER_REGDATE, 'YYYYMMDD')
+	</select>
+	<select id="countDay4" resultType="int">
+		SELECT COUNT(*) AS count
+		FROM MEMBER
+		WHERE SUBSTR(MEMBER_REGDATE, 7, 2) = 22
+		GROUP BY to_char(MEMBER_REGDATE, 'YYYYMMDD')
+	</select>
+
 <!-- 연령대별 통계 -->
 
 

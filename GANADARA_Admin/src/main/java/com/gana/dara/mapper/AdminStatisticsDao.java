@@ -15,5 +15,10 @@ public interface AdminStatisticsDao {
 	public int countAustralia();
 	public int countAntarctica();
 	
+	//일별 가입회원 수 (18, 19, 21, 22)
+	public int countDay1();
+	public int countDay2();
+	public int countDay3();
+	public int countDay4();
 	
 }

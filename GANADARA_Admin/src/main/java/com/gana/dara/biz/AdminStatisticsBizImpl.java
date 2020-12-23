@@ -47,4 +47,28 @@ public class AdminStatisticsBizImpl implements AdminStatisticsBiz {
 		return asdao.countAntarctica();
 	}
 
+	@Override
+	public int countDay1() {
+		
+		return asdao.countDay1();
+	}
+
+	@Override
+	public int countDay2() {
+		
+		return asdao.countDay2();
+	}
+
+	@Override
+	public int countDay3() {
+		
+		return asdao.countDay3();
+	}
+
+	@Override
+	public int countDay4() {
+		
+		return asdao.countDay4();
+	}
+
 }

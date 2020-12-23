@@ -24,12 +24,18 @@ CREATE TABLE MEMBER(
 select * from member
 
 --일별 인원수 구하기 
-SELECT COUNT(*) AS count, to_char(MEMBER_REGDATE, 'YYYYMM') as 가입일
+SELECT COUNT(*) AS count, to_char(MEMBER_REGDATE, 'YYYYMMDD') as 가입일
 FROM MEMBER
-WHERE SUBSTR(MEMBER_REGDATE, 4, 2) = 12
-GROUP BY to_char(MEMBER_REGDATE, 'YYYYMM')
+WHERE SUBSTR(MEMBER_REGDATE, 6, 2) = 18
+GROUP BY to_char(MEMBER_REGDATE, 'YYYYMMDD')
+ORDER BY to_char(MEMBER_REGDATE, 'YYYYMMDD')
 
+SELECT COUNT(*) AS count
+FROM MEMBER
+WHERE SUBSTR(MEMBER_REGDATE, 7, 2) = 18
+GROUP BY to_char(MEMBER_REGDATE, 'YYYYMMDD')
 
+SELECT SUBSTR(MEMBER_REGDATE, 7, 2) FROM MEMBER 
 
 insert into member
 values(memberseq.nextval, 'user1', 'baezzang', 'aaa@aaaa.com', 'user1', '010-0000-0000', 
@@ -93,6 +99,10 @@ values(memberseq.nextval, 'user26', 'gn', 'sdfha@QQ.com', 'user26', '010-2536-56
 values(memberseq.nextval, 'user27', 'lu', 'qweha@QQ.com', 'user27', '010-4436-5785', 
        '021128', 'EUROPE', SYSDATE, 'N', 'USER', 'N', NULL)
 
+insert into member
+values(memberseq.nextval, 'user28', 'lala', 'hfeeha@QQ.com', 'user28', '010-2456-3715', 
+       '831228', 'ASIA', SYSDATE, 'N', 'USER', 'N', NULL)
+       
 SELECT COUNT(*) FROM MEMBER WHERE MEMBER_CON = 'ASIA'   
 DELETE FROM MEMBER WHERE MEMBER_NIC = 'BIGPIG'
 
