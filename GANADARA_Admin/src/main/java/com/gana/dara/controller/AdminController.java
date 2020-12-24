@@ -18,7 +18,7 @@ public class AdminController {
 	private AdminStatisticsBiz asbiz;
 	
 	@GetMapping("/count")
-	public String countAsia(Model model) {
+	public String count(Model model) {
 		ConDto condto = new ConDto(asbiz.countAsia(), asbiz.countEurope(), asbiz.countAfrica(), asbiz.countNorthAmerica(), asbiz.countAustralia(), asbiz.countAntarctica());
 		DayCountDto daydto = new DayCountDto(asbiz.countDay1(), asbiz.countDay2(), asbiz.countDay3(), asbiz.countDay4());
 		
@@ -28,6 +28,12 @@ public class AdminController {
 		return "adminStatistics";
 		
 		
+	}
+	
+	@GetMapping("/mento")
+	public String mentoChoice() {
+		
+		return "";
 	}
 	
 	

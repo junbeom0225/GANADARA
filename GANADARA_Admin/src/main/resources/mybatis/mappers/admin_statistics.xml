@@ -50,7 +50,10 @@
 	</select>
 
 <!-- 연령대별 통계 -->
+	
+	<select id="countAge10">
 
+	</select>
 
 
 

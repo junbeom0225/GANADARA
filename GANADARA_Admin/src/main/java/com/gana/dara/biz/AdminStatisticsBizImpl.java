@@ -71,4 +71,40 @@ public class AdminStatisticsBizImpl implements AdminStatisticsBiz {
 		return asdao.countDay4();
 	}
 
+	@Override
+	public int countAge10() {
+		
+		return asdao.countAge10();
+	}
+
+	@Override
+	public int countAge20() {
+		
+		return asdao.countAge20();
+	}
+
+	@Override
+	public int countAge30() {
+		
+		return asdao.countAge30();
+	}
+
+	@Override
+	public int countAge40() {
+		
+		return asdao.countAge40();
+	}
+
+	@Override
+	public int countAge50() {
+		
+		return asdao.countAge50();
+	}
+
+	@Override
+	public int countAge60() {
+		
+		return asdao.countAge60();
+	}
+
 }
