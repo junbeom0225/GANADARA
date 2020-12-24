@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+  <configuration>
+  
+  	<typeAliases>
+  		<typeAlias type="com.gana.dara.dto.EduDto" alias="eduDto"/>
+  		<typeAlias type="com.gana.dara.dto.EduWordDto" alias="eduWordDto"/>
+  	</typeAliases>
+  	
+  	<mappers>
+  		<mapper resource="/mybatis/edu-mapper.xml"/>
+  		<mapper resource="/mybatis/eduword-mapper.xml"/>
+  	</mappers>
+  
+  </configuration>
