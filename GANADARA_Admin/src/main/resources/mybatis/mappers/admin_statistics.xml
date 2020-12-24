@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gana.dara.mapper.AdminStatisticsDao">
+
+<!--국가별 통계 -->
+	<select id="countAsia" resultType="int">
+		SELECT COUNT(*) FROM MEMBER WHERE MEMBER_CON = 'ASIA'
+	</select>
+	<select id="countEurope" resultType="int">
+		SELECT COUNT(*) FROM MEMBER WHERE MEMBER_CON = 'EUROPE'
+	</select>
+	<select id="countAfrica" resultType="int">
+		SELECT COUNT(*) FROM MEMBER WHERE MEMBER_CON = 'AFRICA'
+	</select>
+	<select id="countNorthAmerica" resultType="int">
+		SELECT COUNT(*) FROM MEMBER WHERE MEMBER_CON = 'NORTH AMERICA'
+	</select>
+	<select id="countAustralia" resultType="int">
+		SELECT COUNT(*) FROM MEMBER WHERE MEMBER_CON = 'AUSTRALIA'
+	</select>
+	<select id="countAntarctica" resultType="int">
+		SELECT COUNT(*) FROM MEMBER WHERE MEMBER_CON = 'ANTARCTICA'
+	</select>
+
+<!-- 일별 통계 18일, 19일, 21일, 22일-->
+	<select id="countDay1" resultType="int">
+		SELECT COUNT(*) AS count
+		FROM MEMBER
+		WHERE SUBSTR(MEMBER_REGDATE, 7, 2) = 18
+		GROUP BY to_char(MEMBER_REGDATE, 'YYYYMMDD')
+	</select>
+	
+	<select id="countDay2" resultType="int">
+		SELECT COUNT(*) AS count
+		FROM MEMBER
+		WHERE SUBSTR(MEMBER_REGDATE, 7, 2) = 19
+		GROUP BY to_char(MEMBER_REGDATE, 'YYYYMMDD')
+	</select>
+	<select id="countDay3" resultType="int">
+		SELECT COUNT(*) AS count
+		FROM MEMBER
+		WHERE SUBSTR(MEMBER_REGDATE, 7, 2) = 21
+		GROUP BY to_char(MEMBER_REGDATE, 'YYYYMMDD')
+	</select>
+	<select id="countDay4" resultType="int">
+		SELECT COUNT(*) AS count
+		FROM MEMBER
+		WHERE SUBSTR(MEMBER_REGDATE, 7, 2) = 22
+		GROUP BY to_char(MEMBER_REGDATE, 'YYYYMMDD')
+	</select>
+
+<!-- 연령대별 통계 -->
+	
+	<select id="countAge10">
+
+	</select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</mapper>
