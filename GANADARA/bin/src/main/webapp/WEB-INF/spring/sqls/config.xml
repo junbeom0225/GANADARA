@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+
+	<typeAliases>
+		<typeAlias type="com.gana.dara.dto.DailyBoardDto" alias="dailyBoardDto" />
+		<typeAlias type="com.gana.dara.dto.MentoAnswerDto" alias="mentoAnswerDto" />
+	</typeAliases>
+
+	<mappers>
+		<mapper resource="mybatis/dailyboard_mapper.xml" />
+		<mapper resource="mybatis/dailyboard_reply_mapper.xml" />
+	</mappers>
+
+</configuration>
