@@ -68,6 +68,26 @@
 						<a href="eduhome.do" class="button fit">학습하러 가기</a>
 					</div>
 				</div>
+				
+				<div class="box">
+					<a href="" class="image fit"><img
+						src="resources/img/assets/speech.png" alt="" /></a>
+					<div class="inner">
+						<h3>말하기 연습</h3>
+						<p>꾸준히 한국어 작문을 하고 튜터선생님을 통해 첨삭을 받으면 한국어 실력이 쑥쑥!</p>
+						<a href="eduPractice.do" class="button style2 fit">글쓰러가기 </a>
+					</div>
+				</div>
+				
+				<div class="box">
+					<a href="" class="image fit"><img
+						src="resources/img/assets/writing3.png" alt="" /></a>
+					<div class="inner">
+						<h3>글쓰기 첨삭</h3>
+						<p>꾸준히 한국어 작문을 하고 튜터선생님을 통해 첨삭을 받으면 한국어 실력이 쑥쑥!</p>
+						<a href="" class="button style2 fit">글쓰러가기 </a>
+					</div>
+				</div>
 
 				<div class="box">
 					<a href="" class="image fit"><img

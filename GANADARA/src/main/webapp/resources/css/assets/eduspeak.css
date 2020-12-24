@@ -4,13 +4,13 @@
 #field{position: relative; width: 1000px; height:500px;} 
 #field #background{position: absolute; top:0; left: 0; width: 100%; height: 100%;}
 #content{position: absolute; margin-left:10px; padding:0; margin-bottom: 0; color:black;}
-#content h2{margin-left: 45%;}
-#content span{margin: 0; padding:0;}
-#content #box1{position:absolute; width: 148%; height:20%; margin-top: 20%; margin-left: 65%; background: white; opacity: 0.5; }
-#content #box2{position:absolute; width: 148%; height:30%; margin-top: 40%; margin-left: 65%; background: gray; opacity: 0.3; }
-#content p{position:relative; width: 100%; margin-top: 22%; margin-left: 83%; font-size: 25px; z-index: 1;}
+#content h2{padding-top: 1em; margin-left:1em; margin-bottom:0.5em; padding-bottom:0;}
+#content span{margin-left:2em; padding:0;}
+#content #box1{position:absolute; width: 45em; height:20%; margin-top: 20%; margin-left: 70%; background: white; opacity: 0.5; border-radius: 1em; }
+#content #box2{position:absolute; width: 45em; height:30%; margin-top: 40%; margin-left: 70%; background: gray; opacity: 0.3; border-radius: 1em; }
+#content p{position:relative; width: 100%; margin-top: 22%; margin-left: 90%; font-size: 25px; z-index: 1; font-weight: bolder;}
 #overlay{position: absolute; margin-top: 20%; margin-left: 67%;}
-#volume{position: absolute; width: 40px;}
+#volume{position: absolute; width: 40px; margin-left:2em; margin-top:0.5em;}
 #stamp{position: absolute; z-index: 1;}
 #stamp_great{position: absolute; width:15%; z-index: 1; margin-left: 70%;}
 .para{position: absolute;}
@@ -26,19 +26,18 @@
 canvas {
 	position: absolute;
 	display: inline-block;
-	width: 45%;
-	height: 10%;
+	border-radius: 1em;
 }
 #analyser {
 	position: absolute;
 	display:inline-block;
-	margin-top: 42.5%;
+	margin-top: 24.5em;
 	width: 60%;
 	height: 15%;
 }
 #wavedisplay{
 	position: relative;
-	margin-top: 22%;
+	margin-top: 9em;
 	margin-left: 24%;
 	width: 50%;
 	height: 15%;
@@ -50,7 +49,7 @@ canvas {
 	}
 	#controls {
 		flex-direction: column;
-		height: 100%;
+		height: 50%;
 		width: 10%;
 	}
 	#viz {
@@ -59,33 +58,33 @@ canvas {
 	}
 }
 #record {
-	width: 70px;
+	width: 75px;
 	cursor: pointer;
 }
 
 #next{
 	position: absolute;
-	width: 70px;
-	margin-left: 50px;
+	width: 75px;
+	margin-left: 60px;
 	cursor: pointer;
 }
 
 #record.recording {
 	background: red;
-	background: -webkit-radial-gradient(center, ellipse cover, #ff0000 0%, white 75%
-		, white 100%, #7db9e8 100%);
-	background: -moz-radial-gradient(center, ellipse cover, #ff0000 0%, white 75%,
-		white 100%, #7db9e8 100%);
-	background: radial-gradient(center, ellipse cover, #ff0000 0%, white 75%,
-		white 100%, #7db9e8 100%);
+	background: -webkit-radial-gradient(center, ellipse cover, #ff0000 0%, #2c2c32 75%
+		, #2c2c32 100%, #7db9e8 100%);
+	background: -moz-radial-gradient(center, ellipse cover, #ff0000 0%, #2c2c32 75%,
+		#2c2c32 100%, #7db9e8 100%);
+	background: radial-gradient(center, ellipse cover, #ff0000 0%, #2c2c32 75%,
+		#2c2c32 100%, #7db9e8 100%);
 }
 #controls{position: absolute;}
-#button{position: absolute; margin-left:400px; margin-top: 30px;}
+#button{position: absolute; display:inline-block; margin-left:33em; margin-top: 23em; z-index: 1000;}
 #btn01{position:relative; width:50px; height:30px; margin-left: 300%; margin-top: 30%;}
 #rec{position: absolute; background: #D31313; border-radius: 50%; width: 20px; height:20px; margin-left:10px;
 background: -webkit-radial-gradient(center, ellipse cover, #D31313 20%, white 75%
 		,  #D31313 100%);}
 #start{color: #D31313; cursor: pointer; font-size: 12px; padding-top: 25px;} 
 #moon{position: absolute;}
-#scoreBox{position: absolute; margin-left: 75%; margin-top:18%; font-size: small; background:black; color: #EAC117; text-align: center; width: 5%;}
-#score{position: absolute; margin-left: 76%; margin-top:20%; font-size: 40px; font-weight: bold; color: #D4A017; text-shadow: 2px 2px 2px #EAC117;}
+#scoreBox{position: absolute; margin-left: 80%; margin-top:18%; font-size: large; background:black; color: #EAC117; text-align: center; width: 5%;}
+#score{position: absolute; margin-left: 81%; margin-top:20%; font-size: 40px; font-weight: bold; color: #D4A017; text-shadow: 2px 2px 2px #EAC117;}

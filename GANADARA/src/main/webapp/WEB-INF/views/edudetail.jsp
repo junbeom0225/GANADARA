@@ -10,7 +10,7 @@
 
 </style>
 
-<title>동영상강의</title>
+<title>한국어학습</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="resources/css/assets/basic.css" />
 </head>
@@ -44,6 +44,7 @@
 						<div class="box">
 							<a href="${dto.edu_url }" class="image fit"></a>
 							<div class="inner">
+							<input type="hidden" name="edu_no" value="${dto.edu_no }">
 								<h3>${dto.edu_level}. ${dto.edu_title }</h3>
 								<p>${dto.edu_detail }</p>
 								<a href="${dto.edu_url }" class="button fit" data-poptrox="youtube,800x400">강의 듣기</a>

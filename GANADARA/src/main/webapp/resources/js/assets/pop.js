@@ -13,15 +13,35 @@
 		$("#banner").css('background-image','url("../dara/resources/img/assets/start02_banner.png"');
 	}
 	
-	/* poptrox 이벤트 방지 */
-	$('.style2').click(function(){
-		location.href = 'eduword_demo.do';
-		return false;
+	/* 단어 넘기기 */
+	// 입문 1단원 
+	$edu_no = $('#edu_no').val();
+	$edu_grade = $('#edu_grade').val();
+	$ew_level = $('#ew_level').val();
+	$edu_content = $('#edu_content').val()
+	if($edu_no == 1 && $edu_grade == '입문'){
+		$('#box').hide();
+		$('#thumbnails').append('<p style="text-align:center; padding-top:20%;">' + $edu_content+ '</p>');
+	}
+	
+	/* poptrox 이벤트 방지(index 0부터 시작) */
+	
+	$('.style2').each(function(i){
+		$(this).click(function(e){
+			//alert($('input[name=edu_no]:eq(' + i + ')').val());
+			location.href = 'eduWord.do?edu_no=' + $('input[name=edu_no]:eq(' + i + ')').val();
+			return false;
+		});
 	});
-	$('.style3').click(function(){
-		location.href = 'eduspeak_demo.do';
-		return false;
+	
+	$('.style3').each(function(i){
+		$(this).click(function(e){
+			//alert($('input[name=edu_no]:eq(' + i + ')').val());
+			location.href = 'eduSpeak.do?edu_no=' + $('input[name=edu_no]:eq(' + i + ')').val();
+			return false;
+		});
 	});
+	
 	
 	var	$window = $(window),
 		$banner = $('#banner'),

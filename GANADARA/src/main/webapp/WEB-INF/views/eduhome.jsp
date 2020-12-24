@@ -28,7 +28,7 @@
 
 </style>
 
-<title>동영상강의</title>
+<title>한국어학습</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="resources/css/assets/basic.css" />
 </head>
@@ -38,7 +38,7 @@
 	<section id="banner" data-video="resources/img/assets">
 		<div class="inner">
 			<div id="h">
-				<h1>동영상강의</h1>
+				<h1>한국어학습</h1>
 				<p>
 					자음, 모음의 한글 기초부터 단어와 문법을 익히며 한국어 고수가 되어보세요. <br />
 				</p>

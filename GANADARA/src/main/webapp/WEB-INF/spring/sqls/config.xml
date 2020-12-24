@@ -7,10 +7,12 @@
   
   	<typeAliases>
   		<typeAlias type="com.gana.dara.dto.EduDto" alias="eduDto"/>
+  		<typeAlias type="com.gana.dara.dto.EduWordDto" alias="eduWordDto"/>
   	</typeAliases>
   	
   	<mappers>
   		<mapper resource="/mybatis/edu-mapper.xml"/>
+  		<mapper resource="/mybatis/eduword-mapper.xml"/>
   	</mappers>
   
   </configuration>

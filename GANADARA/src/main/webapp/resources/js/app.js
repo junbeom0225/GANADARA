@@ -55,39 +55,66 @@ recognition.addEventListener("result", (e) => {
 var next = document.getElementById('next');
 var btn01 = document.getElementById('btn01');
 var record = document.getElementById('record');
+var idx = 0;
 
 $('#save').hide();
 $('#scoreBox').hide();
 $('#score').hide();
+$('.words').hide();
 recognition.start();
 
+$(document).ready(function(){
 
-$('#next').click(function() {
+	/* 단어넣기 */
+	$("#sentence").html($("input[name=ew_content]:eq(0)").val());
 	
-	var sentence = $('#sentence').text().replace(/\s/gi, "").split("");
-	//var voice = para.split("");
-	var score = 0;
-	//alert('sentence: ' + sentence);
-	//alert('voice: ' + para);
+	$('#next').click(function() {
+		
+		var sentence = $('#sentence').text().replace(/\s/gi, "").split("");
+		//var voice = para.split("");
+		var score = 0;
+		//alert('sentence: ' + sentence);
+		//alert('voice: ' + para);
+	
+		for (var i = 0; i < sentence.length - 1; i++) {
+			if (para[i] == null) {
+				break;
+			}
+			else if (sentence[i] == para[i]) {
+				score++;
+			}
+		}
+		var total = score / (sentence.length - 1) * 10;
+		//alert(sentence.length);
+		//alert(score);
+		//alert(total);
+		$('#scoreBox').show();
+		$('#score').text(total);
+		$('#score').show();
+		
+		recognition.stop();
+		document.querySelector("#para").innerHTML = "";
+		
+		setTimeout(function(){
+			$('#save').hide();
+			$('#scoreBox').hide();
+			$('#score').hide();
+			//$('#wavedisplay').hide();
+			idx++;
+			$("#sentence").html($("input[name=ew_content]:eq(" + idx + ")").val());
+			if(idx > $("input[name=ew_content]").length){
+				/*$('#box').hide();
+				$('#thumbnails')
+					.append('<p style="text-align:center; padding-top:20%; font-weight:bold; font-size:x-large">모든 학습을 마쳤습니다. 다음 단원으로 넘어가세요.</p>');*/
+				setTimeout(function(){
+					location.href = 'eduDetail.do?edu_grade=' + $('#edu_grade').val();
+				}, 1500);
+						
+			}
+		}, 2000);
+		
+	});
 
-	for (var i = 0; i < sentence.length - 1; i++) {
-		if (para[i] == null) {
-			break;
-		}
-		else if (sentence[i] == para[i]) {
-			score++;
-		}
-	}
-	var total = score / (sentence.length - 1) * 10;
-	//alert(sentence.length);
-	//alert(score);
-	//alert(total);
-	$('#scoreBox').show();
-	$('#score').text(total);
-	$('#score').show();
-	
-	recognition.stop();
-	document.querySelector("#para").innerHTML = "";
 });
 
 

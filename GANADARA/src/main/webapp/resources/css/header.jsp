@@ -12,7 +12,7 @@
 
 <header id="header">
 		<a class="logo" href="index.jsp">home</a>
-		<a class="logo" href="">back</a>
+		<!-- <a class="logo" href="">back</a> -->
 		<nav>
 			<a href="#menu">Menu</a>
 		</nav>
