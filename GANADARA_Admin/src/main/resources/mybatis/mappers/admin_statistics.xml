@@ -26,26 +26,26 @@
 	<select id="countDay1" resultType="int">
 		SELECT COUNT(*) AS count
 		FROM MEMBER
-		WHERE SUBSTR(MEMBER_REGDATE, 7, 2) = 18
+		WHERE SUBSTR(MEMBER_REGDATE, 7, 2) = 28
 		GROUP BY to_char(MEMBER_REGDATE, 'YYYYMMDD')
 	</select>
 	
 	<select id="countDay2" resultType="int">
 		SELECT COUNT(*) AS count
 		FROM MEMBER
-		WHERE SUBSTR(MEMBER_REGDATE, 7, 2) = 19
+		WHERE SUBSTR(MEMBER_REGDATE, 7, 2) = 29
 		GROUP BY to_char(MEMBER_REGDATE, 'YYYYMMDD')
 	</select>
 	<select id="countDay3" resultType="int">
 		SELECT COUNT(*) AS count
 		FROM MEMBER
-		WHERE SUBSTR(MEMBER_REGDATE, 7, 2) = 21
+		WHERE SUBSTR(MEMBER_REGDATE, 7, 2) = 30
 		GROUP BY to_char(MEMBER_REGDATE, 'YYYYMMDD')
 	</select>
 	<select id="countDay4" resultType="int">
 		SELECT COUNT(*) AS count
 		FROM MEMBER
-		WHERE SUBSTR(MEMBER_REGDATE, 7, 2) = 22
+		WHERE SUBSTR(MEMBER_REGDATE, 7, 2) = 31
 		GROUP BY to_char(MEMBER_REGDATE, 'YYYYMMDD')
 	</select>
 

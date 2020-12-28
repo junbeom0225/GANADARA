@@ -44,9 +44,26 @@ CONSTRAINT MEM_NIC UNIQUE(MEMBER_NIC),
 CONSTRAINT MEN_NO FOREIGN KEY(MENTO_NO) REFERENCES MEMBER(MEMBER_NO)
 
 );
+DROP TABLE ORDER_DAILY;
+DROP TABLE MULTI_CHAT; 
 
+select * from multi_chat;
+select * from ORDER_DAILY;
 select * from member
-
+insert into member
+values(memberseq.nextval, 'user67', 'lala1', 'hfeeha2@QQ.com', 'user67', '010-2456-3715', 
+       '20031228', 'NORTH AMERICA', SYSDATE, 'N', 'USER', 'Y', NULL, 'Y')
+insert into member
+values(memberseq.nextval, 'user683', 'ala2', 'hfeeh3a@QQ.com', 'user67', '010-2433-2315', 
+       '20021228', 'NORTH AMERICA', SYSDATE, 'N', 'USER', 'Y', NULL, 'Y')
+insert into member
+values(memberseq.nextval, 'user672', 'b6', 'hfeeh4a@QQ.com', 'user67', '010-2416-5615', 
+       '20011228', 'NORTH AMERICA', SYSDATE, 'N', 'USER', 'Y', NULL, 'Y')
+insert into member
+values(memberseq.nextval, 'user671', 'whynot', 'hfeeh5a@QQ.com', 'user69', '010-2452-8615', 
+       '20001228', 'NORTH AMERICA', SYSDATE, 'N', 'USER', 'Y', NULL, 'Y')       
+update member
+set member_role = 'MENTO' where member_no = 16
 --일별 인원수 구하기 
 SELECT COUNT(*) AS count, to_char(MEMBER_REGDATE, 'YYYYMMDD') as 가입일
 FROM MEMBER
@@ -125,6 +142,9 @@ values(memberseq.nextval, 'user12', 'BUNNY', 'NN@NNaa.com', 'user12', '010-0055-
 insert into member
 values(memberseq.nextval, 'user13', 'RABIT', 'MMa@aMMa.com', 'user13', '010-0666-0660', 
        '19351128', 'AUSTRALIA', SYSDATE, 'N', 'USER', 'N', NULL, 'Y')
+       insert into member
+values(memberseq.nextval, 'user24', '짱', 'a@QQ.com', 'user24', '010-6363-3636', 
+       '19881228', 'ASIA', SYSDATE, 'N', 'USER', 'N', NULL, 'Y')
 insert into member
 values(memberseq.nextval, 'user14', 'superman', 'OO@OO.com', 'user14', '010-6600-6600', 
        '19651128', 'AUSTRALIA', SYSDATE, 'N', 'USER', 'N', NULL, 'Y')
@@ -134,9 +154,7 @@ values(memberseq.nextval, 'user15', 'hahaha', 'PPa@PPa.com', 'user15', '010-6066
 insert into member
 values(memberseq.nextval, 'user16', 'ido', 'QQa@QQ.com', 'user16', '010-6060-0606', 
        '19881128', 'ANTARCTICA', SYSDATE, 'N', 'USER', 'N', NULL, 'Y')
-insert into member
-values(memberseq.nextval, 'user24', '짱', 'a@QQ.com', 'user24', '010-6363-3636', 
-       '19881228', 'ASIA', SYSDATE, 'N', 'USER', 'N', NULL, 'Y')
+
        insert into member
 values(memberseq.nextval, 'user25', '이', 'hha@QQ.com', 'user26', '010-6566-5676', 
        '19771128', 'AUSTRALIA', SYSDATE, 'N', 'USER', 'N', NULL, 'Y')

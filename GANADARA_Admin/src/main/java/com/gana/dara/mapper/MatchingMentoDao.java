@@ -11,4 +11,5 @@ public interface MatchingMentoDao {
 
 	public List<MemberDto> matchingMento();
 	public MemberDto selectOne(int member_no);
+	public int updateMento(MemberDto dto);
 }

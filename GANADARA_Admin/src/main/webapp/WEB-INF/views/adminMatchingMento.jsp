@@ -17,7 +17,7 @@
 		<col width="500"/>
 		<col width="100"/>
 		<col width="100"/>
-		
+	
 		<tr>
 			<th>NO</th>
 			<th>NAME</th>
@@ -26,16 +26,22 @@
 			<th>MENTO</th>
 			<th>멘토지정</th>
 		</tr>
-		<c:forEach var="dto" items="${list }">
-			<tr>
-				<td>${dto.member_no }</td>
-				<td>${dto.member_name }</td>
-				<td>${dto.member_email }</td>
-				<td>${dto.member_daily }</td>
-				<td>${dto.mento_no }</td>
-				<td><input type="button" value="변경" onclick="location.href='./updateMento?member_no=${dto.member_no}'"/>
-			</tr>
-		</c:forEach>	
+			
+			<c:forEach var="dto" items="${list }">
+				<c:if test="${dto.member_daily == 'Y'}">
+					<tr>
+						<td>${dto.member_no }</td>
+						<td>${dto.member_name }</td>
+						<td>${dto.member_email }</td>
+						<td>${dto.member_daily }</td>
+						<td>${dto.mento_no }</td>
+						<td>
+							<input type="button" value="변경" onclick="location.href='./updateMento?member_no=${dto.member_no}'"/>
+						</td>
+					</tr>
+				</c:if>
+			</c:forEach>	
+		
 	</table>
 	
 

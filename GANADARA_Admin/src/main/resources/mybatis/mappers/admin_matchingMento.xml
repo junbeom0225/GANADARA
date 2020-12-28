@@ -3,16 +3,20 @@
 <mapper namespace="com.gana.dara.mapper.MatchingMentoDao">
 
 	 <select id="matchingMento" resultType="com.gana.dara.dto.MemberDto">
-		select member_no, member_name, member_nic, member_email, member_daily, mento_no
+		select member_no, member_name, member_nic, member_email, member_role ,member_daily, mento_no
 		from member
 		order by member_no desc 
 	 </select>
 	 
-	 <select id="selectOne" parameterType="int">
-	 	select member_no, member_name, member_nic, member_email, member_daily, mento_no
+	 <select id="selectOne" resultType="com.gana.dara.dto.MemberDto">
+	 	select member_no, member_name, member_nic, member_email, member_role,member_daily, mento_no
 		from member
 		where member_no = #{member_no}
 	 </select>
-
+	
+	<update id="updateMento" parameterType="com.gana.dara.dto.MemberDto">
+		UPDATE MEMBER
+		SET MENTO_NO = #{mento_no} WHERE MEMBER_NO = #{member_no}
+	</update>
 
 </mapper>

@@ -26,4 +26,10 @@ public class MatchingMentoBizImpl implements MatchingMentoBiz {
 		return mdao.selectOne(member_no);
 	}
 
+	@Override
+	public int updateMento(MemberDto dto) {
+	
+		return mdao.updateMento(dto);
+	}
+
 }
