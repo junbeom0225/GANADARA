@@ -46,7 +46,7 @@ public class AdminStatisticsBizImpl implements AdminStatisticsBiz {
 		
 		return asdao.countAntarctica();
 	}
-
+/*
 	@Override
 	public int countDay1() {
 		
@@ -70,7 +70,7 @@ public class AdminStatisticsBizImpl implements AdminStatisticsBiz {
 		
 		return asdao.countDay4();
 	}
-
+*/
 	@Override
 	public int countAge10() {
 		

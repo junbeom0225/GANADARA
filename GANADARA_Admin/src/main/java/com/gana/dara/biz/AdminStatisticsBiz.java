@@ -8,12 +8,12 @@ public interface AdminStatisticsBiz {
 	public int countNorthAmerica();
 	public int countAustralia();
 	public int countAntarctica();
-	
+/*	
 	public int countDay1();
 	public int countDay2();
 	public int countDay3();
 	public int countDay4();
-	
+*/	
 	public int countAge10();
 	public int countAge20();
 	public int countAge30();

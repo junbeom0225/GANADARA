@@ -79,24 +79,42 @@ GROUP BY to_char(MEMBER_REGDATE, 'YYYYMMDD')
 SELECT SUBSTR(MEMBER_REGDATE, 7, 2) FROM MEMBER 
 
 --연령대 별 인원수 (이게 되는데, 지금 2000년 지나서 태어난 사람들의 나이가 오류가 생김)
-select count(*) as cnt from (select floor((to_char(sysdate,'YYYY')-((substr(member_birth, 0, 2))+1900))/10)*10 as y
-from member) o
-where y = 30
-group by y
+select count(*) as cnt
+from (select trunc(months_between(trunc(sysdate), to_date(member_birth, 'YYYYMMDD'))/12) as age
+from member) 
+where age >= 10 and age <20
 
+select count(*) as cnt
+from (select trunc(months_between(trunc(sysdate), to_date(member_birth, 'YYYYMMDD'))/12) as age
+from member) 
+where age >= 20 and age <30
 
-
-
+select count(*) as cnt
+from (select trunc(months_between(trunc(sysdate), to_date(member_birth, 'YYYYMMDD'))/12) as age
+from member) 
+where age >= 30 and age <40
+select count(*) as cnt
+from (select trunc(months_between(trunc(sysdate), to_date(member_birth, 'YYYYMMDD'))/12) as age
+from member) 
+where age >= 40 and age <50
+select count(*) as cnt
+from (select trunc(months_between(trunc(sysdate), to_date(member_birth, 'YYYYMMDD'))/12) as age
+from member) 
+where age >= 50 and age <60
+select count(*) as cnt
+from (select trunc(months_between(trunc(sysdate), to_date(member_birth, 'YYYYMMDD'))/12) as age
+from member) 
+where age >= 60
 --참고용 
 select
 count(*) as cnt
 from
 	(select
-		floor((to_char(sysdate, 'YYYY') - substr(member_birth, 0, 4)) / 10) * 10 as y
+		trunc((to_char(sysdate, 'YYYY') - substr(member_birth, 0, 4)) / 10) * 10 as y
 	from
-		m_member
+		member
 	) o
-where y = 30	
+where y = 10	
 group by
 	y
 

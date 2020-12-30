@@ -12,7 +12,7 @@ public class AgeDto {
 	public AgeDto() {
 		
 	}
-	private AgeDto(int countAge10, int countAge20, int countAge30, int countAge40, int countAge50, int countAge60) {
+	public AgeDto(int countAge10, int countAge20, int countAge30, int countAge40, int countAge50, int countAge60) {
 		this.countAge10 = countAge10;
 		this.countAge20 = countAge20;
 		this.countAge30 = countAge30;

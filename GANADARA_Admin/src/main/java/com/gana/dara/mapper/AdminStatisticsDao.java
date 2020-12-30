@@ -15,12 +15,12 @@ public interface AdminStatisticsDao {
 	public int countAustralia();
 	public int countAntarctica();
 	
-	//일별 가입회원 수 (18, 19, 21, 22) 다시 하기!
+	/*일별 가입회원 수 (18, 19, 21, 22) 다시 하기!
 	public int countDay1();
 	public int countDay2();
 	public int countDay3();
 	public int countDay4();
-	
+	*/
 	// 연령대별 회원수 (10대, 20대, 30대, 40대, 50대, 60대 이상)
 	public int countAge10();
 	public int countAge20();
