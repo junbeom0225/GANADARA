@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dailyboard" >
+
+	<resultMap type="MemberDto" id="MemberDtoMap">
+		<result property="member_no" column="MEMBER_NO"/>
+		<result property="member_name" column="MEMBER_NAME"/>
+		<result property="member_nic" column="MEMBER_NIC"/>
+		<result property="member_email" column="MEMBER_EMAIL"/>
+		<result property="member_pw" column="MEMBER_PW"/>
+		<result property="member_tel" column="MEMBER_TEL"/>
+		<result property="member_birth" column="MEMBER_BIRTH"/>
+		<result property="member_con" column="MEMBER_CON"/>
+		<result property="member_regdate" column="MEMBER_REGDATE"/>
+		<result property="member_del" column="MEMBER_DEL"/>
+		<result property="member_role" column="MEMBER_ROLE"/>
+		<result property="member_daily" column="MEMBER_DAILY"/>
+		<result property="mento_no" column="MENTO_NO"/>
+		<result property="member_key" column="MEMBER_KEY"/>
+		<result property="db_no" column="DB_NO"/>
+		<result property="db_title" column="DB_TITLE"/>
+		<result property="db_content" column="DB_CONTENT"/>
+		<result property="db_date" column="DB_DATE"/>
+		<result property="db_answer" column="DB_ANSWER"/>
+	</resultMap>
+
+
+	<select id="selectList" resultType="dailyBoardDto">
+		SELECT DB_NO, MEMBER_NO, DB_TITLE, DB_CONTENT, DB_DATE, DB_ANSWER
+		FROM DAILY_BOARD
+		ORDER BY DB_NO DESC
+	</select>
+	
+	<insert id="insert" parameterType="dailyBoardDto">
+		INSERT INTO DAILY_BOARD
+		VALUES(DAILYBOARDSEQ.NEXTVAL, #{member_no}, #{db_title}, #{db_content}, SYSDATE, 'N')
+	</insert>
+
+	<select id="selectOne" parameterType="int" resultType="dailyBoardDto">
+		SELECT DB_NO, MEMBER_NO, DB_TITLE, DB_CONTENT, DB_DATE, DB_ANSWER
+		FROM DAILY_BOARD
+		WHERE DB_NO = #{db_no}
+	</select>
+
+	<update id="update" parameterType="dailyBoardDto">
+		UPDATE DAILY_BOARD
+		SET MEMBER_NO = #{member_no}, DB_TITLE = #{db_title}, DB_CONTENT = #{db_content}
+		WHERE DB_NO = #{db_no}
+	</update>
+
+	<delete id="delete" parameterType="int">
+		DELETE FROM DAILY_BOARD
+		WHERE DB_NO = #{db_no}
+	</delete>
+
+	<select id="mento_no" resultMap="MemberDtoMap">
+		select m.mento_no from member m left outer join daily_board d on m.member_no = d.member_no
+		where d.db_no = #{db_no}
+	</select>
+</mapper>
