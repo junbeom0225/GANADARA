@@ -33,9 +33,10 @@
 	<nav id="menu">
 		<ul class="links">
 			<li><a href="eduhome.do">한국어학습</a></li>
-			<li><a href="#">글쓰기첨삭</a></li>
+			<li><a href="dailyBoard/list.do">글쓰기첨삭</a></li>
 			<li><a href="#">타자연습</a></li>
-			<li><a href="#">마이페이지</a></li>
+			<li><a href="mypage.do">마이페이지</a></li>
+			<li><a href="logout.do">로그아웃</a></li>
 		</ul>
 	</nav>
 
@@ -85,7 +86,7 @@
 					<div class="inner">
 						<h3>글쓰기 첨삭</h3>
 						<p>꾸준히 한국어 작문을 하고 튜터선생님을 통해 첨삭을 받으면 한국어 실력이 쑥쑥!</p>
-						<a href="" class="button style2 fit">글쓰러가기 </a>
+						<a href="dailyBoard/list.do" class="button style2 fit">글쓰러가기 </a>
 					</div>
 				</div>
 
@@ -115,7 +116,7 @@
 					<div class="inner">
 						<h3>마이페이지</h3>
 						<p>개인 정보를 수정하고 관련 자료들을 확인할 수 있어요. 결제서비스는 마이페이지에서 가능합니다.</p>
-						<a href="" class="button style2 fit">마이페이지 가</a>
+						<a href="mypage.do" class="button style2 fit">마이페이지</a>
 					</div>
 				</div>
 
