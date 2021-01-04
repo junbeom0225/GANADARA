@@ -24,7 +24,8 @@
 			<li><a href="eduhome.do">한국어학습</a></li>
 			<li><a href="#">글쓰기첨삭</a></li>
 			<li><a href="#">타자연습</a></li>
-			<li><a href="#">마이페이지</a></li>
+			<li><a href="mypage.do">마이페이지</a></li>
+			<li><a href="logout.do">로그아웃</a></li>
 		</ul>
 	</nav>
 	

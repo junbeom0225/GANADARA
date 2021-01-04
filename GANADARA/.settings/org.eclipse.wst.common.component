@@ -33,8 +33,11 @@
         
         
         <property name="context-root" value="dara"/>
+<<<<<<< HEAD
                         
         
+=======
+>>>>>>> eadd91f3b99c1137874c00349ec86837675a7052
         <property name="java-output-path" value="/GANADARA/target/classes"/>
                                                         	
     

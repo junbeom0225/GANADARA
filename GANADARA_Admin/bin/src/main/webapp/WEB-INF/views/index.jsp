@@ -7,7 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h4>${login.member_email }님 환영합니다. 관리자 페이지 입니다.</h4>
 
+	<a href="admin.do/page/count" >통계페이지</a>
+	<a href="admin.do/page/mento">멘토관리 페이지</a>
+	
 </body>
 </html>

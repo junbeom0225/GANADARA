@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gana.dara.mapper.AdminStatisticsDao">
+
+<!--국가별 통계 -->
+	<select id="countAsia" resultType="int">
+		SELECT COUNT(*) FROM MEMBER WHERE MEMBER_CON = 'ASIA'
+	</select>
+	<select id="countEurope" resultType="int">
+		SELECT COUNT(*) FROM MEMBER WHERE MEMBER_CON = 'EUROPE'
+	</select>
+	<select id="countAfrica" resultType="int">
+		SELECT COUNT(*) FROM MEMBER WHERE MEMBER_CON = 'AFRICA'
+	</select>
+	<select id="countNorthAmerica" resultType="int">
+		SELECT COUNT(*) FROM MEMBER WHERE MEMBER_CON = 'NORTH AMERICA'
+	</select>
+	<select id="countAustralia" resultType="int">
+		SELECT COUNT(*) FROM MEMBER WHERE MEMBER_CON = 'AUSTRALIA'
+	</select>
+	<select id="countAntarctica" resultType="int">
+		SELECT COUNT(*) FROM MEMBER WHERE MEMBER_CON = 'ANTARCTICA'
+	</select>
+
+<!-- 일별 통계 18일, 19일, 21일, 22일
+	<select id="countDay1" resultType="int">
+		SELECT COUNT(*) AS count
+		FROM MEMBER
+		WHERE SUBSTR(MEMBER_REGDATE, 7, 2) = 28
+		GROUP BY to_char(MEMBER_REGDATE, 'YYYYMMDD')
+	</select>
+	
+	<select id="countDay2" resultType="int">
+		SELECT COUNT(*) AS count
+		FROM MEMBER
+		WHERE SUBSTR(MEMBER_REGDATE, 7, 2) = 29
+		GROUP BY to_char(MEMBER_REGDATE, 'YYYYMMDD')
+	</select>
+	<select id="countDay3" resultType="int">
+		SELECT COUNT(*) AS count
+		FROM MEMBER
+		WHERE SUBSTR(MEMBER_REGDATE, 7, 2) = 30
+		GROUP BY to_char(MEMBER_REGDATE, 'YYYYMMDD')
+	</select>
+	<select id="countDay4" resultType="int">
+		SELECT COUNT(*) AS count
+		FROM MEMBER
+		WHERE SUBSTR(MEMBER_REGDATE, 7, 2) = 31
+		GROUP BY to_char(MEMBER_REGDATE, 'YYYYMMDD')
+	</select>-->
+
+<!-- 연령대별 통계 -->
+	
+	<select id="countAge10" resultType="int">
+		select count(*) as cnt
+		from (select trunc(months_between(trunc(sysdate), to_date(member_birth, 'YYYYMMDD'))/12) as age
+				from member) 
+		<![CDATA[where age >= 10 and age < 20]]>
+	</select>
+	<select id="countAge20" resultType="int">
+		select count(*) as cnt
+		from (select trunc(months_between(trunc(sysdate), to_date(member_birth, 'YYYYMMDD'))/12) as age
+				from member) 
+		<![CDATA[where age >= 20 and age < 30]]>
+	</select>
+	<select id="countAge30" resultType="int">
+		select count(*) as cnt
+		from (select trunc(months_between(trunc(sysdate), to_date(member_birth, 'YYYYMMDD'))/12) as age
+				from member) 
+		<![CDATA[where age >= 30 and age < 40]]>
+	</select>
+	<select id="countAge40" resultType="int">
+		select count(*) as cnt
+		from (select trunc(months_between(trunc(sysdate), to_date(member_birth, 'YYYYMMDD'))/12) as age
+				from member) 
+		<![CDATA[where age >= 40 and age < 50]]>
+	</select>
+	<select id="countAge50" resultType="int">
+		select count(*) as cnt
+		from (select trunc(months_between(trunc(sysdate), to_date(member_birth, 'YYYYMMDD'))/12) as age
+				from member) 
+		<![CDATA[where age >= 50 and age < 60]]>	
+	</select>
+	<select id="countAge60" resultType="int">
+		select count(*) as cnt
+		from (select trunc(months_between(trunc(sysdate), to_date(member_birth, 'YYYYMMDD'))/12) as age
+				from member) 
+		<![CDATA[where age >= 60]]>
+	</select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</mapper>

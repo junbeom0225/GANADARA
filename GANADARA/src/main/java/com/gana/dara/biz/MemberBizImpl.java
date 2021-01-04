@@ -42,17 +42,12 @@ public class MemberBizImpl implements MemberBiz {
 	public int SnsLogin(MemberDto dto) {
 		return dao.SnsLogin(dto);
 	}
-	/*
+	
 	@Override
 	public int GetKey(String member_email, String member_key) {
 		return 0;
 	}
 
-	@Override
-	public int alter_memberKey(String member_email, String key) {
-		return 0;
-	}
-	*/
 
 	@Override
 	public int DailyService(String member_email) {
@@ -62,6 +57,11 @@ public class MemberBizImpl implements MemberBiz {
 	@Override
 	public String MemberRole(String member_role) {
 		return dao.MemberRole(member_role);
+	}
+
+	@Override
+	public MemberDto get_searchId(MemberDto dto) {
+		return dao.get_searchId(dto);
 	}
 	
 

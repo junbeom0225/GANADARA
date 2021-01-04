@@ -77,7 +77,7 @@ button:hover {
 
 #thumbnails{width: 100%; height: 600px; margin-right:2em; margin-top: 2em; margin-bottom:1em; }
 #box{position: relative; width:100%; height:100%; background: #2c2c32; border-radius: 2em;}
-.words{margin:5em; border: 1px dotted white; height: 25em; border-radius: 1em;}
+.words{margin:4em; border: 1px dotted white; height: 20em; border-radius: 1em;}
 .para{margin: 2em;}
 </style>
 

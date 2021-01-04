@@ -218,6 +218,23 @@
 			<artifactId>json-simple</artifactId>
 			<version>1.1.1</version>
 		</dependency>
+		<!-- 구글 소셜 로그인 구현 2차 추가-->
+  		<dependency>
+    		<groupId>org.springframework.social</groupId>
+    		<artifactId>spring-social-google</artifactId>
+   	   	 <version>1.0.0.RELEASE</version>
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.httpcomponents</groupId>
+  			<artifactId>httpclient</artifactId>
+  			<version>4.5.3</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.9.7</version>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
