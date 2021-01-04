@@ -1,5 +1,7 @@
 package com.gana.dara.biz;
 
+import java.util.List;
+
 import com.gana.dara.dto.MemberDto;
 
 public interface MemberBiz {
@@ -33,6 +35,9 @@ public interface MemberBiz {
 		
 		// 아이디 찾기 이름, 전화번호
 		public MemberDto get_searchId(MemberDto dto);
+		
+		// 멘토 - 첨삭회원 가져오기 
+		public List<MemberDto> studentList(int member_no);
 
 
 

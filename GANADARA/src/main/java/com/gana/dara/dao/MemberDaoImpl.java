@@ -1,6 +1,9 @@
 package com.gana.dara.dao;
 
 
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -148,6 +151,21 @@ public class MemberDaoImpl implements MemberDao {
 		}
 		System.out.println(res.getMember_email() + "dao");
 		return res;
+	}
+
+	@Override
+	public List<MemberDto> studentList(int member_no) {
+		List<MemberDto> list = null;
+		try {
+			list = sqlSession.selectList(NAMESAPCE + "studentList", member_no);
+			for(MemberDto dto : list) {
+				System.out.println(dto.getMember_role());
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
 	}
 
 	

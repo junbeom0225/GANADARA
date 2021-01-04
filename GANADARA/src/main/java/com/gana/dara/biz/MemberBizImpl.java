@@ -1,6 +1,8 @@
 package com.gana.dara.biz;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -62,6 +64,11 @@ public class MemberBizImpl implements MemberBiz {
 	@Override
 	public MemberDto get_searchId(MemberDto dto) {
 		return dao.get_searchId(dto);
+	}
+
+	@Override
+	public List<MemberDto> studentList(int member_no) {
+		return dao.studentList(member_no);
 	}
 	
 

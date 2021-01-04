@@ -2,6 +2,7 @@ package com.gana.dara.controller;
 
 import java.io.IOException; 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -337,9 +338,48 @@ public class MemberController {
 		MemberDto dto = (MemberDto)session.getAttribute("login");
 		if (dto == null) {
 			return "redirect:/login.do";
+		} else if (dto.getMember_role().equals("USER")) {
+			return "mypage";
+		} else if(dto.getMember_role().equals("MENTO")){
+			return "mypage_mento";
 		}
 		return "mypage";
 	}
 	
+	// 멘토 - 첨삭학생 관리
+	@RequestMapping("studentList.do")
+	public String studentList(Model model, int member_no) {
+		System.out.println(member_no);
+		List<MemberDto> list = biz.studentList(member_no);
+		for(MemberDto dto : list) {
+			System.out.println("controller: " + dto.getMember_role());
+		}
+		return "studentlist";
+	}
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

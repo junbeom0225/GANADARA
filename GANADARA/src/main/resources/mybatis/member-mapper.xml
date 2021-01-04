@@ -72,5 +72,34 @@
 	SELECT MEMBER_ROLE FROM MEMBER
 	WHERE MEMBER_EMAIL = #{member_email}
 	</select>
+	
+	<!--  첨삭회원 가져오기 -->
+	<select id="studentList" parameterType="int" resultType="List">
+		SELECT * FROM MEMBER WHERE MENTO_NO = #{member_no}
+	</select>
   	
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

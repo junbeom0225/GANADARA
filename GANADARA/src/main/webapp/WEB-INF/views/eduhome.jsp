@@ -24,7 +24,7 @@
 	height: 515px;		
 	padding: 0px 0px 300px 0px; 	
 }
-#banner{background-image: url("resources/img/assets/studyvideo.png");}}
+#banner{background-image: url("resources/img/assets/studyvideo.png");}
 
 </style>
 

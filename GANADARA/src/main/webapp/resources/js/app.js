@@ -76,7 +76,7 @@ $(document).ready(function(){
 		//alert('sentence: ' + sentence);
 		//alert('voice: ' + para);
 	
-		for (var i = 0; i < sentence.length - 1; i++) {
+		for (var i = 0; i < sentence.length; i++) {
 			if (para[i] == null) {
 				break;
 			}
@@ -84,7 +84,7 @@ $(document).ready(function(){
 				score++;
 			}
 		}
-		var total = score / (sentence.length - 1) * 10;
+		var total = Math.ceril(score / (sentence.length) * 10);
 		//alert(sentence.length);
 		//alert(score);
 		//alert(total);
