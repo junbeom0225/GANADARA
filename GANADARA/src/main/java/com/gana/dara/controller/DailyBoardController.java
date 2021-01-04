@@ -24,7 +24,7 @@ import com.gana.dara.dto.MemberDto;
 import com.gana.dara.dto.MentoAnswerDto;
 
 @Controller
-@RequestMapping("/dailyBoard")
+//@RequestMapping("/dailyBoard")
 public class DailyBoardController {
 
 	@Autowired
@@ -128,6 +128,20 @@ public class DailyBoardController {
 		model.addAttribute("url", "/dailyBoard/detail.do?db_no="+db_no+"&member_no="+member_no);
 		return "redirect";
 	}
+	
+	// 멘토 - 첨삭학생 관리
+	@RequestMapping("/studentList.do")
+	public String studentList(Model model, int member_no) {
+		System.out.println(member_no);
+		List<MemberDto> list = dailybiz.studentList(member_no);
+		model.addAttribute("list", list);
+		for(MemberDto dto : list) {
+			System.out.println("controller: " + dto.getMember_no());
+		}
+		return "studentlist";
+	}
+	
+	
 //----------------------------------------댓글 ajax -----------------------------------------------------	
 	// 댓글 목록
 			@RequestMapping("/replylist.do")

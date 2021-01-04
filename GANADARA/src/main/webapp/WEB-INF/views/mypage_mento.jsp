@@ -49,7 +49,7 @@
 				</div>
 
 				<div class="box">
-					<a href="dailypay.do" class="image fit"><img
+					<a href="dailyBoard/studentList.do?member_no=${login.member_no }" class="image fit"><img
 						src="resources/img/assets/daily.png" alt="" /></a>
 					<div class="inner">
 						<h3>첨삭 관리</h3>

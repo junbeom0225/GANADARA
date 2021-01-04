@@ -346,16 +346,17 @@ public class MemberController {
 		return "mypage";
 	}
 	
-	// 멘토 - 첨삭학생 관리
-	@RequestMapping("studentList.do")
-	public String studentList(Model model, int member_no) {
-		System.out.println(member_no);
-		List<MemberDto> list = biz.studentList(member_no);
-		for(MemberDto dto : list) {
-			System.out.println("controller: " + dto.getMember_role());
-		}
-		return "studentlist";
-	}
+//	// 멘토 - 첨삭학생 관리
+//	@RequestMapping("studentList.do")
+//	public String studentList(Model model, int member_no) {
+//		System.out.println(member_no);
+//		List<MemberDto> list = biz.studentList(member_no);
+//		model.addAttribute("list", list);
+//		for(MemberDto dto : list) {
+//			System.out.println("controller: " + dto.getMember_role());
+//		}
+//		return "studentlist";
+//	}
 	
 }
 

@@ -57,4 +57,9 @@
 		select m.mento_no from member m left outer join daily_board d on m.member_no = d.member_no
 		where d.db_no = #{db_no}
 	</select>
+	<select id="studentList" parameterType="int" resultType="MemberDto">
+		SELECT DB_NO, MEMBER_NO, DB_TITLE, DB_CONTENT, DB_DATE, DB_ANSWER
+		FROM DAILY_BOARD
+		WHERE MEMBER_NO = (SELECT MEMBER_NO FROM MEMBER WHERE MENTO_NO = #{member_no})
+	</select>
 </mapper>

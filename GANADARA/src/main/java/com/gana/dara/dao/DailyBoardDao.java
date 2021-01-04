@@ -17,4 +17,7 @@ public interface DailyBoardDao {
 	
 	// 멘토 번호
 	public MemberDto mento_no(int db_no);
+	
+	// 멘토 - 첨삭회원 가져오기 
+	public List<MemberDto> studentList(int member_no);
 }

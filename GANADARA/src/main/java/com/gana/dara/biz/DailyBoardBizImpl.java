@@ -52,4 +52,9 @@ public class DailyBoardBizImpl implements DailyBoardBiz {
 		return dailydao.mento_no(db_no);
 	}
 
+	@Override
+	public List<MemberDto> studentList(int member_no) {
+		return dailydao.studentList(member_no);
+	}
+
 }
