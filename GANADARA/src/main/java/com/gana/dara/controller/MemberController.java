@@ -312,7 +312,7 @@ public class MemberController {
       if (dto == null) {
          return "redirect:/login.do";
       }
-      return "mypage";
+      return "mypage_mento";
    }
    
    
