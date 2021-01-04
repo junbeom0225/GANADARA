@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="eduword">
+
+	<select id="selectList" parameterType="Int" resultType="eduWordDto">
+		SELECT EDU_NO, EDU_GRADE, EW_LEVEL, EW_CONTENT
+		FROM EDU_WORD
+		WHERE EDU_NO = #{edu_no}
+		ORDER BY EW_LEVEL
+	</select>
+
+</mapper>
