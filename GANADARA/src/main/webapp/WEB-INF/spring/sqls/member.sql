@@ -49,7 +49,7 @@ DROP TABLE MULTI_CHAT;
 
 select * from multi_chat;
 select * from ORDER_DAILY;
-select * from member
+select * from member;
 insert into member
 values(memberseq.nextval, 'admin', 'admin', 'dahye90@gmail.com', 'admin', '010-2456-3715', 
        '19651228', 'ANTARCTICA', SYSDATE, 'N', 'ADMIN', 'N', NULL, 'Y')

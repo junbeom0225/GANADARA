@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<link href="./resources/css/assets/register.css" rel="stylesheet" type="text/css">
 <script type="text/javascript">
 //기능은 id / css는 class 속성 / 파라미터는 name
 
@@ -181,8 +182,35 @@ var birthJ = /^(?:[1-2]{1}(?:[0-9]{3})(?:0[1-9]|1[0-2])(?:0[1-9]|[1,2][0-9]|3[0,
 });
 </script>
 </head>
-<body>
+<body id="top" class="is-preload">
 
+	<!-- Banner -->
+	<!--
+				To use a video as your background, set data-video to the name of your video without
+				its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+				formats to work correctly.
+			-->
+	<!-- Header -->
+	<header id="header">
+		<a class="logo" href="index.jsp">home</a>
+		<nav>
+			<a href="#menu">Menu</a>
+		</nav>
+	</header>
+
+	<!-- Nav -->
+	<nav id="menu">
+		<ul class="links">
+			<li><a href="eduhome.do">한국어학습</a></li>
+			<li><a href="#">글쓰기첨삭</a></li>
+			<li><a href="#">타자연습</a></li>
+			<li><a href="mypage.do">마이페이지</a></li>
+			<li><a href="logout.do">로그아웃</a></li>
+		</ul>
+	</nav>
+	<br/>
+	<br/>
+	<br/>
 	<form action="registerRes.do" method="post">
 		<div class="form-group">
 			<label for="member_email">아이디</label>
@@ -191,7 +219,7 @@ var birthJ = /^(?:[1-2]{1}(?:[0-9]{3})(?:0[1-9]|1[0-2])(?:0[1-9]|[1,2][0-9]|3[0,
 					<div class="check_font" id="id_check"></div>
 				</div>
 		</div>
-
+	<br/>
 		<div class="form-group"> 
 			<label for="member_pw">비밀번호</label>
 				<div class="form">
@@ -199,7 +227,7 @@ var birthJ = /^(?:[1-2]{1}(?:[0-9]{3})(?:0[1-9]|1[0-2])(?:0[1-9]|[1,2][0-9]|3[0,
 					<div class="check_font" id="pw_check"></div>
 				</div>
 		</div>
-		
+	<br/>		
 		<div class="form-group"> 
 			<label for="member_pw">비밀번호 확인</label>
 				<div class="form">
@@ -207,7 +235,7 @@ var birthJ = /^(?:[1-2]{1}(?:[0-9]{3})(?:0[1-9]|1[0-2])(?:0[1-9]|[1,2][0-9]|3[0,
 					<div class="check_font" id="pw_check2"></div>
 				</div>
 		</div>
-	
+	<br/>
 		<div class="form-group">
 			<label for="member_name">영문이름</label>
 				<div class="form">
@@ -215,7 +243,7 @@ var birthJ = /^(?:[1-2]{1}(?:[0-9]{3})(?:0[1-9]|1[0-2])(?:0[1-9]|[1,2][0-9]|3[0,
 					<div class="check_font" id="name_check"></div>
 				</div>
 		</div>
-		
+	<br/>	
 		<div class="form-group">
 			<label for="member_nic">닉네임</label>
 				<div class="form">
@@ -223,7 +251,7 @@ var birthJ = /^(?:[1-2]{1}(?:[0-9]{3})(?:0[1-9]|1[0-2])(?:0[1-9]|[1,2][0-9]|3[0,
 					<div class="check_font" id="nic_check"></div>
 				</div>
 		</div>
-
+	<br/>
 		<div class="form-group">
 			<label for="member_tel">전화번호</label>
 				<div class="form">
@@ -231,7 +259,7 @@ var birthJ = /^(?:[1-2]{1}(?:[0-9]{3})(?:0[1-9]|1[0-2])(?:0[1-9]|[1,2][0-9]|3[0,
 					<div class="check_font" id="phone_check"></div>
 			</div>
 		</div>
-		
+	<br/>		
 		<div class="form-group">
 			<label for="member_birth">생년월일</label>
 				<div class="form">
@@ -239,7 +267,7 @@ var birthJ = /^(?:[1-2]{1}(?:[0-9]{3})(?:0[1-9]|1[0-2])(?:0[1-9]|[1,2][0-9]|3[0,
 					<div class="check_font" id="birth_check"></div>
 				</div>
 		</div>
-		
+	<br/>		
 		<div class="form-group">
 			<label for="member_con">국적</label>
 				<div class="form">
@@ -253,19 +281,55 @@ var birthJ = /^(?:[1-2]{1}(?:[0-9]{3})(?:0[1-9]|1[0-2])(?:0[1-9]|[1,2][0-9]|3[0,
 					</select>
 				</div>
 		</div>
-		
+	<br/>		
 		<div class="form-group">
 			<label for="member_role">등급</label>
-				<div class="form">
-					<input type="radio" class="regist_form"  id="member_role" name="member_role" value="USER">학생
-					<input type="radio" class="regist_form" id="member_role" name="member_role" value="MENTO">멘토
-				</div>
+				<select name="member_role" class="regist_form">
+						<option value="USER" id="member_role" name="member_role">학생</option>
+						<option value="MENTO" id="member_role" name="member_role">멘토</option>
+				</select>
 		</div>
 		
 		<div>
 			<button type="submit" name="register" id="submit">회원가입하기</button>
 		</div>
 	</form>
+	<br/>	
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<h2>가나다라마바사아자차카타파하</h2>
+			<p>가나다라 한국어 학습은 최희선, 황다혜, 최소연, 황다혜, 박준범, 박건웅을 도움으로 제작되었습니다만, 제작물
+				중 저작권은..아무것도 우리에게 없어요. 파이널 도대체 언제 끝날까요. 메리크리스마스...</p>
+
+			<ul class="icons">
+				<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon fa-facebook"><span
+						class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon fa-instagram"><span
+						class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon fa-envelope"><span
+						class="label">Email</span></a></li>
+			</ul>
+			<p class="copyright">
+				&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>.
+				Images: <a href="https://unsplash.com/">Unsplash</a>. Videos: <a
+					href="http://coverr.co/">Coverr</a>.
+			</p>
+		</div>
+	</footer>
+	
+	<!-- Scripts -->
+	<script src="resources/js/assets/breakpoints.min.js"></script>
+	<script src="resources/js/assets/jquery.min.js"></script>
+	<script src="resources/js/assets/jquery.scrolly.min.js"></script>
+	<script src="resources/js/assets/jquery.poptrox.min.js"></script>
+	<script src="resources/js/assets/skel.min.js"></script>
+	<script src="resources/js/assets/util.js"></script>
+	<script src="resources/js/assets/main.js"></script>
+	<script src="resources/js/assets/browser.min.js"></script>
+	
+
 
 </body>
 </html>

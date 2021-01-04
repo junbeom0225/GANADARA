@@ -51,9 +51,4 @@ public class EduController {
 		return "edudetail";
 	}
 	
-	@RequestMapping("mentoStudent.do")
-	public String mentoStudent(Model model, int member_no) {
-		return "mentoStudent";
-	}
-	
 }
