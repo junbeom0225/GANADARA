@@ -245,9 +245,6 @@
 					</additionalBuildcommands>
 					<downloadSources>true</downloadSources>
 					<downloadJavadocs>true</downloadJavadocs>
-					<warSourceDirectory>src/main/webapp</warSourceDirectory>    <!-- 수정 -->
-					<warName>sample</warName>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -255,8 +252,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.5.1</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>1.6</source>
+					<target>1.6</target>
 					<compilerArgument>-Xlint:all</compilerArgument>
 					<showWarnings>true</showWarnings>
 					<showDeprecation>true</showDeprecation>
