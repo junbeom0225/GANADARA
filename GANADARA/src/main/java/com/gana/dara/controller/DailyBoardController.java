@@ -140,6 +140,12 @@ public class DailyBoardController {
 		}
 		return "studentlist";
 	}
+	// 멘토 - 첨삭 디테일 
+	@RequestMapping("/studentDetail.do")
+	public String studentDetail(int db_no, Model model) {
+			model.addAttribute("dbdto", dailybiz.selectOne(db_no));
+			return "dailydetail"; // 확인
+	}
 	
 	
 //----------------------------------------댓글 ajax -----------------------------------------------------	

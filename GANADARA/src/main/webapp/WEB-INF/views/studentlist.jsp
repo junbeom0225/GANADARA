@@ -134,11 +134,11 @@ button:hover {
 							</c:forEach>
 						</c:otherwise>
 					</c:choose>
-					<tr>
+					<!-- <tr>
 						<td colspan="5">
 							<input type="button" value="WRITE" onclick="location.href='./insertform.do'"/>
 						</td>
-					</tr>
+					</tr> -->
 				</table>
 								
 					
