@@ -2,12 +2,226 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>관리자페이지</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="resources/css/assets/main.css" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<style type="text/css">
+
+    body {
+      margin: 0;
+    }
+    .scene {
+      height: 100vh;
+      overflow: hidden;
+      background-attachment: fixed;
+      background-size: cover;
+      font-weight: 200;
+    }
+    .scene.one{
+      background-image: url(resources/css/assets/images/korea2.jpg);
+    }
+    .scene.two{
+      background-image: url(resources/css/assets/images/korea1.jpg);
+    }
+    .scene.three{
+      background-image: url(resources/css/assets/images/korea4.jpg);
+    }
+    .scene header{
+      color:white;
+      max-width: 80%;
+      position: relative;
+      left:50%;
+      top:50%;
+      transform:translateX(-50%) translateY(-50%);
+      font-size:1.5rem;
+      text-align: center;
+    }
+    .scene header h1{
+      font-size:2rem;
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+    .scene header h1:after{
+      content:'';
+      border-bottom:1px solid white;
+      width:8rem;
+      display: block;
+      margin:0 auto;
+      margin-top:1rem;
+    }
+
+</style>
 </head>
 <body>
 	
-	<a href="admin.do/page/count" >통계페이지</a>
-	<a href="admin.do/page/mento">멘토관리 페이지</a>
+	<!-- Sidebar -->
+	<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+ 		 <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+  		 <a href="admin.do/count" class="w3-bar-item w3-button" style="color:black">통계페이지</a>
+  		 <a href="admin.do/mento" class="w3-bar-item w3-button" style="color:black">멘토관리 페이지</a>
+  		 <a href="#" class="w3-bar-item w3-button" style="color:black">1:1채팅</a>
+	</div>
+		
+	<div id="main">
+		<div class="w3-teal">
+		  <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+		  <div class="w3-container">
+		    <h1>ADMIN PAGE</h1>
+		  </div>
+		</div>
+<!--  
+  	<div class="mWrap">	
+  		<div class="mContents" id="contents">
+  			<div class="parallax">
+  				<div class="mSection01"></div>
+  				
+  				<div class="mSection02"></div>
+  				
+  				<div class="mSection03"></div>
+  			</div>
+  		</div>
+  	</div>	
+ -->	
+  <div class="w3-container">
+	 	<section class="scene one">
+	    <header>
+	      <h1>한글은 홀소리와 닿소리 모두 소리틀을 본떠 만든 음소문자[1]로 한글 맞춤법에서는 닿소리 14개와 홀소리 10개, 모두 24개를 표준으로 삼는다. 
+	    </header>
+	  </section>
+	  <section class="scene two">
+	    <header>
+	      <h1>한글은 조선의 4대 왕인 세종대왕이 창제한 한국어의 문자이며, 한글은 자음 14자, 모음 10자이다. 훈민정음은 '백성을 가르치는 바른 소리'라는 뜻이다. 
+	    </header>
+	  </section>
+	  <section class="scene three">
+	    <header>
+	      <h1>낱글자가 낱소리만 나타내므로 음소 문자이며 낱내로 초성, 중성, 종성을 묶어 모아 쓰기 때문에 음절 문자의 특성도 갖는다. </h1> 
+	    </header>
+	  </section> 
+  </div>	
+<!--  	
+		<main class="w3-container">
+			<p>
+			한글은 홀소리와 닿소리 모두 소리틀을 본떠 만든 음소문자[1]로 한글 맞춤법에서는 닿소리 14개와 홀소리 10개, 모두 24개를 표준으로 삼는다. "나랏말이 중국과 달라" 문제를 느낀 조선의 세종대왕이 한국어는 물론 이웃나라 말까지 나타내도록 1443년 창제하여 1446년 반포하였다. 
+			낱글자가 낱소리만 나타내므로 음소 문자이며 낱내로 초성, 중성, 종성을 묶어 모아 쓰기 때문에 음절 문자의 특성도 갖는다. 
+			한글 창제 초기에는 닿소리 17개에 홀소리 11개, 총 28개였으나, 뒤에 4개를 잃고 현재는 24개만 쓴다. 대한민국과 조선민주주의인민공화국, 옌볜 조선족 자치주에서는 공용 문자로, 인도네시아의 부톤 섬에서는 찌아찌아어의 보조 문자로 채택하였다. 
+			또한 조선민주주의인민공화국에서는 조선글이라 부른다.</p>
+			
+			<p>
+			한글은 조선의 4대 왕인 세종대왕이 창제한 한국어의 문자이며, 한글은 자음 14자, 모음 10자이다. 최초 세종이 한글을 만들었을 때 한글의 이름은 '훈민정음'(訓民正音)이다. 훈민정음은 '백성을 가르치는 바른 소리'라는 뜻이다. 
+			재러드 다이아몬드는 한글은 독창성이 있고 과학적인 문자라고 칭찬하였으며 노벨 문학상을 받은 펄 벅은 한글을 창제한 세종대왕은 '한국의 레오나르도 다 빈치'라며 극찬하였다.</p>
+			
+			<p>
+			한국은 삼국시대부터 이두(吏讀)와 구결(口訣)을 써 왔는데, 구결은 본래 한문에 구두(句讀)를 떼는 데 쓰기 위한 일종의 보조 편법에 지나지 않았고, 이두는 비록 한국어를 표시함에 틀림이 없었지만 한국어를 자유자재로 적을 수 없었으며,
+			 그 표기법의 일원성(一元性)이 없어서 설사 이두로써 족하다 해도 한자교육이 선행되어야 했다. 이러한 문자생활의 불편은 한자를 쓰지 않고도 배우기 쉽고 쓰기 쉬운 새로운 글자의 출현이 절실히 요구되었다.
+			</p>
+		</main>
+	-->		
+	<footer id="footer">
+		<div class="inner">
+			<h2>가나다라마바사아자차카타파하</h2>
+			<p>가나다라 한국어 학습은 최희선, 황다혜, 최소연, 황다혜, 박준범, 박건웅을 도움으로 제작되었습니다만, 제작물
+				중 저작권은..아무것도 우리에게 없어요. 파이널 도대체 언제 끝날까요. 메리크리스마스...</p>
+
+			<ul class="icons">
+				<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon fa-facebook"><span
+						class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon fa-instagram"><span
+						class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon fa-envelope"><span
+						class="label">Email</span></a></li>
+			</ul>
+			<p class="copyright">
+				&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>.
+				Images: <a href="https://unsplash.com/">Unsplash</a>. Videos: <a
+					href="http://coverr.co/">Coverr</a>.
+			</p>
+		</div>
+		<a id="back-to-top" href="#">Top</a>
+	</footer>
+	</div>
+	<!-- Scripts -->
+	<script>
+	function w3_open() {
+		  document.getElementById("main").style.marginLeft = "25%";
+		  document.getElementById("mySidebar").style.width = "25%";
+		  document.getElementById("mySidebar").style.display = "block";
+		  document.getElementById("openNav").style.display = 'none';
+		}
+		function w3_close() {
+		  document.getElementById("main").style.marginLeft = "0%";
+		  document.getElementById("mySidebar").style.display = "none";
+		  document.getElementById("openNav").style.display = "inline-block";
+		}
+	</script>
+	<script src="resources/js/assets/breakpoints.min.js"></script>
+	<script src="resources/js/assets/jquery.min.js"></script>
+	<script src="resources/js/assets/jquery.scrolly.min.js"></script>
+	<script src="resources/js/assets/jquery.poptrox.min.js"></script>
+	<script src="resources/js/assets/skel.min.js"></script>
+	<script src="resources/js/assets/util.js"></script>
+	<script src="resources/js/assets/main.js"></script>
+	<script src="resources/js/assets/browser.min.js"></script>
+	
+	<script>
+		/*-변수 지정하기
+		
+		  -문서의 높이를 계산하고 원하는 부분이 상단에서 얼마큼 떨어져 있는지 offset 값을 계산하기
+		  -스크롤과 클릭 이벤트 작성하기
+		*/
+		var btt = document.getElementById('back-to-top'),
+			docElem = document.documentElement, // 문서 자체를 가져온다. 
+			offset,   // 문서가 1000이면 스크롤량이 800정도라면 전체에서 스크롤량을 뺀다
+			scrollPos, // 스크롤 올라간 양 
+			docHeight;   // 스크롤 높이
+			
+		// 문서 높이 계산하기
+		//docHeight = docElem.scrollHeight;
+			docHeight = Math.max(docElem.offsetHeight, docElem.scrollHeight);   
+			//브라우저마다 높은 값을 가져온다. 문서의 스크롤 하이트를 가져온다. 
+			
+		
+			
+			// 문서의 높이가 있을 때, 
+			if(docHeight != 'undefined'){     // 값이 있으면
+				offset = docHeight / 4;
+			}
+		// 스크롤 이벤트 추가
+		window.addEventListener('scroll', function(){
+			  // 스크롤 양(스크롤이 얼마나 생기는지)
+			scrollPos = docElem.scrollTop;  
+			btt.className = (scrollPos > offset) ? 'visible' : '';
+		});
+			
+		btt.addEventListener('click', function(ev){
+			ev.preventDefault();  // 링크의 본연의 기능을 막는다. 
+			//docElem.scrollTop = 0;
+			scrollToTop();
+		});
+		function scrollToTop(){
+			// 스크롤 양을 조금씩 빼다가 0으로 
+			// 일정시간 마다 할일
+			// var scrollInterval = setInterval(할일, 시간);
+			// 0.0015s = 15
+			// 할일 = function(){ 실제로 할일}
+			// 윈도우의 스크롤 양이 0이 아닐때
+			// 실제로 할 일 window.scrollBy(0, y); -55 y의 값이 바껴야 되므로 
+			// 스크롤양이 0이면 setInterval을 멈춰야 한다.  clearInterval(이름);
+			
+			var scrollInterval = setInterval(function(){
+				if(scrollPos != 0){
+					window.scrollBy(0, -55);
+				}else{
+					clearInterval(scrollInterval);
+				}
+			}, 15);
+			
+		}
+	</script>
 	
 </body>
 </html>

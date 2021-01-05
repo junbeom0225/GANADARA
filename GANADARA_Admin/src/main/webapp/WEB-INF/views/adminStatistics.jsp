@@ -6,21 +6,51 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>통계페이지</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 <style type="text/css">
-.container{
-	display: flex;
-	justy-content : center;
-	width : 300px;
-	height: 300px;
-	margin-top: 20px;
-	flex-wrap : wrap;
+body{
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat";
+}
+.navigation{
+  width: 100%;
+  padding: 18px 0;
+  text-align: center;
+}
+.navigation a{
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: 0 18PX;
+  text-decoration: NONE;
+  color: #fff;
+  font-weight: 500;
+  text-shadow: 0 0 20px #000000;
+  transition: 0.3s;
+}
+.navigation a:hover{
+  color: #333;
+}
+.nav{
+  position: fixed;
+  background: #F5BB4E;
 }
 </style>
 </head>
 <body>
+
+  	  <div class="navigation">
+        <a href="#">Home</a>
+        <a href="#" class="menu" style="color:black">통계페이지</a>
+        <a href="mento" class="menu" style="color:black">멘토관리 페이지</a>
+        <a href="#" class="menu" style="color:black">1:1채팅</a>
+      </div>
+
+
+	
 
 	<section id="section1">
 		<div id="donut" class="section">	
@@ -49,6 +79,9 @@
 					<canvas id="myChartThree" class="item"></canvas>
 		</div>
 	</section>	
+
+	
+	
 <script>
 	let countAsia = document.getElementById('Asia').value;
 	let countEurope = document.getElementById('Europe').value;
@@ -128,5 +161,18 @@
 	    }
 	});
 </script>
+<script type="text/javascript">
+    var nav = document.getElementsByClassName("navigation");
+
+    window.onscroll = function sticky() {
+      if(window.pageYOffset > nav[0].offsetTop) {
+        nav[0].classList.add("nav");
+      } else {
+        nav[0].classList.remove("nav");
+      }
+    }
+  </script>
+
+	
 </body>
 </html>
