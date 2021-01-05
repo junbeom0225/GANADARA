@@ -26,7 +26,7 @@ import com.gana.dara.dto.MemberDto;
 import com.google.gson.Gson;
 
 @Controller
-
+@RequestMapping("/admin.do/page")
 public class AdminController {
 
 	@Autowired
@@ -36,7 +36,7 @@ public class AdminController {
 	
 	
 	
-	@GetMapping("admin.do/count")
+	@GetMapping("/count")
 	public String count(Model model) {
 	//	MemberDto dto = (MemberDto)session.getAttribute("login");
 		ConDto condto = new ConDto(asbiz.countAsia(), asbiz.countEurope(), asbiz.countAfrica(), asbiz.countNorthAmerica(), asbiz.countAustralia(), asbiz.countAntarctica());
@@ -51,14 +51,14 @@ public class AdminController {
 		
 	}
 	
-	@GetMapping("admin.do/mento")
+	@GetMapping("/mento")
 	public String mentoMatching(Model model) {
 		
 		model.addAttribute("list", mbiz.matchingMento());
 		return "adminMatchingMento";
 	}
 	
-	@GetMapping("admin.do/updateMento")
+	@GetMapping("/updateMento")
 	public String mentoUpdate(int member_no, Model model, HttpSession session) {
 		MemberDto dto = (MemberDto)session.getAttribute("login");
 		model.addAttribute("dto", mbiz.selectOne(member_no));
@@ -66,7 +66,7 @@ public class AdminController {
 		return "adminMentoUpdate";
 	}
 	
-	@PostMapping("admin.do/resMento")
+	@PostMapping("/resMento")
 	public String mentoRes(int member_no, int mento_no) {
 		MemberDto dto = new MemberDto();
 		dto.setMember_no(member_no);
