@@ -1,0 +1,25 @@
+DROP TABLE SHORT_TYPING;
+DROP SEQUENCE STSEQ;
+
+CREATE SEQUENCE STSEQ;
+
+CREATE TABLE SHORT_TYPING(
+	ST_NO NUMBER PRIMARY KEY,
+	ST_CONTENT VARCHAR2(500) NOT NULL,
+	ST_TITLE VARCHAR2(200) NOT NULL
+);
+
+SELECT ST_NO, ST_CONTENT, ST_TITLE FROM SHORT_TYPING ORDER BY ST_NO DESC;
+
+INSERT INTO SHORT_TYPING VALUES(STSEQ.NEXTVAL,'인생에 뜻을 세우는데 있어 늦은 때라곤 없다.','M');
+INSERT INTO SHORT_TYPING VALUES(STSEQ.NEXTVAL,'도중에 포기하지 말라. 망설이지 말라. 최후의 성공을 거둘 때까지 밀고 나가자.','M');
+INSERT INTO SHORT_TYPING VALUES(STSEQ.NEXTVAL,'네 자신의 불행을 생각하지 않게 되는 가장 좋은 방법은 일에 몰두하는 것이다.','M');
+INSERT INTO SHORT_TYPING VALUES(STSEQ.NEXTVAL,'우리는 두려움의 홍수에 버티기 위해서 끊임없이 용기의 둑을 쌓아야 한다.','M');
+INSERT INTO SHORT_TYPING VALUES(STSEQ.NEXTVAL,'이미끝나버린 일을 후회하기 보다는 하고 싶었던 일들을 하지못한 것을 후회하라.','M');
+INSERT INTO SHORT_TYPING VALUES(STSEQ.NEXTVAL,'실패는 잊어라 그러나 그것이 준 교훈은 절대 잊으면 안된다.','M');
+INSERT INTO SHORT_TYPING VALUES(STSEQ.NEXTVAL,'길을 잃는 다는 것은 곧 길을 알게 된다는 것이다.','M');
+INSERT INTO SHORT_TYPING VALUES(STSEQ.NEXTVAL,'성공으로 가는 엘리베이터는 고장입니다. 당신은 계단을 이용해야만 합니다. 한계단 한계단씩.','M');
+
+
+
+

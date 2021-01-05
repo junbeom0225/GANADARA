@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+	
+	<typeAliases>
+		<typeAlias type="com.gana.dara.dto.ShortDto" alias="ShortDto" />
+		<typeAlias type="com.gana.dara.dto.CalDto" alias="CalDto" />
+	</typeAliases>
+	<mappers>
+		<mapper resource="mybatis/Short-mapper.xml" />
+		<mapper resource="mybatis/Cal-mapper.xml" />
+	</mappers>
+
+</configuration>
