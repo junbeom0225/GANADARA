@@ -39,7 +39,6 @@
         
         
         <property name="context-root" value="dara"/>
-                
         <property name="java-output-path" value="/GANADARA/target/classes"/>
                                                                 	
     
