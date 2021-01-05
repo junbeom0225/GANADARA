@@ -62,7 +62,7 @@ body{
 			<input type="hidden" id="Antarctica" value="${condto.countAntarctica }" />
 		</div>
 		<div class="container">
-					<canvas id="myChartOne" class="item"></canvas>
+					<canvas id="myChartOne" class="item" style="height:70vh; width:70vw">></canvas>
 		</div>
 	</section>
 	
@@ -76,7 +76,7 @@ body{
 			<input type="hidden" id="age60" value="${agedto.countAge60 }" />
 		</div>
 		<div class="container">
-					<canvas id="myChartThree" class="item"></canvas>
+					<canvas id="myChartThree" class="item" style="height:50vh; width:30vw">></canvas>
 		</div>
 	</section>	
 
@@ -105,6 +105,7 @@ body{
 	        }]
 	    },
 	    options : {
+	    	responsive: false,
 	    	title : {
 	    		display : true,
 	    		text : '국적별 회원 수',
@@ -148,6 +149,7 @@ body{
 	        }]
 	    },
 	    options : {
+	    	 responsive: false,
 	    	title: {
 	    		display : true,
 	    		text: '연령별 회원 수',
