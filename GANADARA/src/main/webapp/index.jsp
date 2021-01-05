@@ -35,7 +35,7 @@
 		<ul class="links">
 			<li><a href="eduhome.do">한국어학습</a></li>
 			<li><a href="dailyBoard/list.do">글쓰기첨삭</a></li>
-			<li><a href="#">타자연습</a></li>
+			<li><a href="keyboard.do">타자연습</a></li>
 			<li><a href="mypage.do">마이페이지</a></li>
 			<c:if test="${empty login.member_email }">
 				<li><a href="login.do">로그인</a></li>
@@ -107,12 +107,12 @@
 				</div>
 
 				<div class="box">
-					<a href="" class="image fit"><img
+					<a href="keyboard.do" class="image fit"><img
 						src="resources/img/assets/typing02.png" alt="" /></a>
 					<div class="inner">
 						<h3>타자연습</h3>
 						<p>다양한 주제로 단문, 장문연습을 할 수 있어요. 재미있는 타자 게임과 함께 한국어 타이핑 실력을 늘려요.</p>
-						<a href="" class="button style3 fit">타자연습하기</a>
+						<a href="keyboard.do" class="button style3 fit">타자연습하기</a>
 					</div>
 				</div>
 
