@@ -30,5 +30,18 @@
 	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sqlSession"/>
 	</bean>
+	
+	<!-- google Class Bean설정 추가 -->
+	<!-- 클라이언트ID와 보안비밀 세팅 -->
+	<bean id="googleConnectionFactory" class="org.springframework.social.google.connect.GoogleConnectionFactory">
+ 		 <constructor-arg value="886961978256-1qo5ub7uaejnbu24b9gir70dcqcpl2lv.apps.googleusercontent.com" />
+  		 <constructor-arg value="uDzjsKd3SvGrFNrlErK4HHP2" />
+	</bean>
+
+	<!-- 승인된 자바스크립트 원본과 승인된 리디렉션 URI -->
+	<bean id="googleOAuth2Parameters" class="org.springframework.social.oauth2.OAuth2Parameters">
+  		<property name="scope" value="https://www.googleapis.com/auth/plus.login" />
+  		<property name="redirectUri" value="http://localhost:8787/dara/callback2.do" />
+	</bean>
 		
 </beans>

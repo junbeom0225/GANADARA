@@ -26,7 +26,7 @@ import com.gana.dara.dto.MemberDto;
 import com.google.gson.Gson;
 
 @Controller
-@RequestMapping("/admin.do/page")
+
 public class AdminController {
 
 	@Autowired
@@ -80,6 +80,13 @@ public class AdminController {
 		return "redirect:./updateMento?member_no="+member_no;
 	}
 	
-	
+	@GetMapping("/adminhome")
+	public String home() {
+		return "redirect:http://localhost:8787/dara";
+	}
+	@GetMapping("/admindaily")
+	public String dailyboard() {
+		return "redirect:http://localhost:8787/dara/list.do";
+	}
 	
 }

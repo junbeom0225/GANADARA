@@ -16,9 +16,13 @@
 		<typeAlias type="com.gana.dara.dto.OrderDailyDto" alias="OrderDailyDto" />
 		<typeAlias type="com.gana.dara.dto.DailyBoardDto" alias="dailyBoardDto" />
 		<typeAlias type="com.gana.dara.dto.MentoAnswerDto" alias="mentoAnswerDto" />
+		<typeAlias type="com.gana.dara.dto.ShortDto" alias="ShortDto" />
+		<typeAlias type="com.gana.dara.dto.CalDto" alias="CalDto" />
   	</typeAliases>
   	
   	<mappers>
+  	<mapper resource="mybatis/Short-mapper.xml" />
+		<mapper resource="mybatis/Cal-mapper.xml" />
   		<mapper resource="/mybatis/edu-mapper.xml"/>
   		<mapper resource="/mybatis/eduword-mapper.xml"/>
   		<mapper resource="/mybatis/member-mapper.xml" />

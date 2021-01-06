@@ -10,48 +10,85 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<link rel="stylesheet" href="resources/css/assets/main.css" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style type="text/css">
-body{
-  margin: 0;
-  padding: 0;
-  font-family: "Montserrat";
+body{margin:0}
+
+#box{
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
 }
-.navigation{
-  width: 100%;
-  padding: 18px 0;
-  text-align: center;
+.chartOne{
+
+	width: 1000px;
+	height:800px;
 }
-.navigation a{
-  font-size: 20px;
-  text-transform: uppercase;
-  padding: 0 18PX;
-  text-decoration: NONE;
-  color: #fff;
-  font-weight: 500;
-  text-shadow: 0 0 20px #000000;
-  transition: 0.3s;
+.container1{
+	margin-left: 50px;
+	margin-top: 20px;
+	width: 580px;
+	height:400px;
+	border: solid 1px;
+	border-color: #fff;
+	border-radius: 30px;
+	position: relative;
+	left: 100px;
+	top: 50px;
+	display: inline-block;
 }
-.navigation a:hover{
-  color: #333;
+.container2{
+	margin-right: 50px;
+	margin-top: 20px;
+	width: 500px;
+	height:400px;
+	border: solid 1px;
+	border-color: #fff;
+	border-radius: 30px;
+	position: relative;
+	right: 100px;
+	top: 50px;
+	display: inline-block;
 }
-.nav{
-  position: fixed;
-  background: #F5BB4E;
+.item{
+	position: relative;
+	top: 100px;
+}
+#myChartOne{
+	position: relative;
+	left: -70px;
+}
+#myChartThree{
+	position: relative;
+	right: -20px;
+	top: 20px;
 }
 </style>
 </head>
 <body>
+<%@ include file="../../resources/css/header-admin.jsp"%>
 
-  	  <div class="navigation">
-        <a href="#">Home</a>
-        <a href="#" class="menu" style="color:black">통계페이지</a>
-        <a href="mento" class="menu" style="color:black">멘토관리 페이지</a>
-        <a href="#" class="menu" style="color:black">1:1채팅</a>
-      </div>
+	<!-- Sidebar -->
+	<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+ 		 <button class="w3-bar-item w3-button w3-large" onclick="w3_close()"></button>
+  		 <a href="count" class="w3-bar-item w3-button" style="color:black">통계페이지</a>
+  		 <a href="mento" class="w3-bar-item w3-button" style="color:black">멘토관리 페이지</a>
+  		 <a href="#" class="w3-bar-item w3-button" style="color:black">1:1채팅</a>
+  		 <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+	</div>
+	<div id="main">
+		<div class="w3-teal">
+		  <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+		  <div class="w3-container">
+		    <h1>Admin Statistics Page</h1>
+		  </div>
+	</div>
+  	
 
 
 	
-
+ <div id="box">
 	<section id="section1">
 		<div id="donut" class="section">	
 			<input type="hidden" id="Asia" value="${condto.countAsia }"/>
@@ -61,9 +98,11 @@ body{
 			<input type="hidden" id="Australia" value="${condto.countAustralia }" />
 			<input type="hidden" id="Antarctica" value="${condto.countAntarctica }" />
 		</div>
-		<div class="container">
-					<canvas id="myChartOne" class="item" style="height:70vh; width:70vw">></canvas>
-		</div>
+		<div class="chartOne">	
+			<div class="container1">
+						<canvas id="myChartOne" class="item" style="height:40vh; width:40vw"></canvas>
+			</div>
+		</div>	
 	</section>
 	
 	<section id="section3">
@@ -75,11 +114,11 @@ body{
 			<input type="hidden" id="age50" value="${agedto.countAge50 }" />
 			<input type="hidden" id="age60" value="${agedto.countAge60 }" />
 		</div>
-		<div class="container">
+		<div class="container2">
 					<canvas id="myChartThree" class="item" style="height:50vh; width:30vw">></canvas>
 		</div>
 	</section>	
-
+ </div>
 	
 	
 <script>
@@ -110,7 +149,7 @@ body{
 	    		display : true,
 	    		text : '국적별 회원 수',
 	    		fontSize : 15,
-	    		fontColor : 'skyblue',
+	    		fontColor : '#fff',
 	    		position : 'bottom'
 	    	},
 	    	legend : {
@@ -150,11 +189,18 @@ body{
 	    },
 	    options : {
 	    	 responsive: false,
+	    	 scales: {  // x, y축 옵션
+	    		yAxes:[{
+	    			ticks: {
+	    				beginAtZero: true // y축의 값이 0부터 시작
+	    			}
+	    		}] 
+	    	 },
 	    	title: {
 	    		display : true,
 	    		text: '연령별 회원 수',
 	    		fontSize: 15,
-	    		fontColor: 'red',
+	    		fontColor: '#fff',
 	    		position: 'bottom'
 	    	},
 	    	legend: {
@@ -163,18 +209,20 @@ body{
 	    }
 	});
 </script>
-<script type="text/javascript">
-    var nav = document.getElementsByClassName("navigation");
-
-    window.onscroll = function sticky() {
-      if(window.pageYOffset > nav[0].offsetTop) {
-        nav[0].classList.add("nav");
-      } else {
-        nav[0].classList.remove("nav");
-      }
-    }
-  </script>
-
+<script>
+	function w3_open() {
+		  document.getElementById("main").style.marginLeft = "15%";
+		  document.getElementById("mySidebar").style.width = "15%";
+		  document.getElementById("mySidebar").style.display = "block";
+		  document.getElementById("openNav").style.display = 'none';
+		}
+		function w3_close() {
+		  document.getElementById("main").style.marginLeft = "0%";
+		  document.getElementById("mySidebar").style.display = "none";
+		  document.getElementById("openNav").style.display = "inline-block";
+		}
+	</script>
+<%@ include file="../../resources/css/footer_pop.jsp"%>
 	
 </body>
 </html>

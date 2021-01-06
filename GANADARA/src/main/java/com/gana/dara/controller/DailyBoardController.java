@@ -24,7 +24,7 @@ import com.gana.dara.dto.MemberDto;
 import com.gana.dara.dto.MentoAnswerDto;
 
 @Controller
-@RequestMapping("/dailyBoard")
+
 public class DailyBoardController {
 
 	@Autowired
@@ -77,29 +77,37 @@ public class DailyBoardController {
 	public String detail(int db_no,int member_no, Model model, HttpSession session) {
 		MemberDto dto = (MemberDto)session.getAttribute("login");
 		int login_memberno = dto.getMember_no();
+	//	System.out.println("넘어온 db_no:"+ db_no);
+	//	System.out.println("넘어온 member_no:"+member_no);
+	//	System.out.println("로그인한 member_no:"+login_memberno);
 		MemberDto mento = dailybiz.mento_no(db_no);
 		int mento_no = mento.getMento_no();
-		System.out.println("mento_no 확인: "+ mento_no);
-		System.out.println("member_no 확인 : "+ member_no);
-		System.out.println("login member_no 확인:" + login_memberno);
+	//	System.out.println("mento_no 확인: "+ mento_no);
+	//	System.out.println("member_no 확인 : "+ member_no);
+	//	System.out.println("login member_no 확인:" + login_memberno);
 		if(member_no == login_memberno || login_memberno == mento_no) {  // 해당 글의 멘토이거나 글쓴이일 때, 글을 볼 수 있다. 
 			model.addAttribute("dbdto", dailybiz.selectOne(db_no));
-			return "dailydetail"; // 확인
+			return "dailydetail_original"; // 확인
 		}else {
 			// 확인!
 			model.addAttribute("msg", "해당 글을 볼 수 없습니다.");
-			model.addAttribute("url", "/dailyBoard/list.do");
+			model.addAttribute("url", "/list.do");
 			return "redirect";
 		}
 		
 	}
 	
 	@RequestMapping("/updateform.do")
-	public String updateForm(Model model, int db_no, HttpSession session) {
+	public String updateForm(Model model, int db_no, HttpSession session, int member_no) {
 		MemberDto dto = (MemberDto)session.getAttribute("login");
-		model.addAttribute("dbdto", dailybiz.selectOne(db_no));
-		model.addAttribute("login", dto);
-		return "dailyupdate";
+		if(dto.getMember_no() == member_no) {
+			model.addAttribute("dbdto", dailybiz.selectOne(db_no));
+			model.addAttribute("login", dto);
+			return "dailyupdate";
+		}
+		model.addAttribute("msg", "해당 글을 수정할 수 없습니다.");
+		model.addAttribute("url", "/detail.do?db_no="+db_no+"&member_no="+member_no);
+		return "redirect";
 	}
 	@RequestMapping("/updateres.do")
 	public String updatRes(DailyBoardDto dbdto) {
@@ -125,9 +133,24 @@ public class DailyBoardController {
 		}
 		// 확인
 		model.addAttribute("msg", "해당 글을 삭제할 수 없습니다.");
-		model.addAttribute("url", "/dailyBoard/detail.do?db_no="+db_no+"&member_no="+member_no);
+		model.addAttribute("url", "/detail.do?db_no="+db_no+"&member_no="+member_no);
 		return "redirect";
 	}
+	
+	// 멘토 - 첨삭학생 관리
+	@RequestMapping("/studentList.do")
+	public String studentList(Model model, int member_no) {
+		System.out.println(member_no);
+		List<MemberDto> list = dailybiz.studentList(member_no);
+		model.addAttribute("list", list);
+		for(MemberDto dto : list) {
+			System.out.println("controller: " + dto.getMember_no());
+		}
+		return "studentlist";
+	}
+
+	
+	
 //----------------------------------------댓글 ajax -----------------------------------------------------	
 	// 댓글 목록
 			@RequestMapping("/replylist.do")
@@ -143,8 +166,18 @@ public class DailyBoardController {
 				replydto.setDb_no(madto.getDb_no());
 				replydto.setMa_writer(madto.getMa_writer());
 				replydto.setMa_content(madto.getMa_content());
+					
+				int updatedb_no = replydto.getDb_no();
+				System.out.println("댓글달린 글번호:"+updatedb_no);
 				
-				return replybiz.replyInsert(replydto);
+				int res = replybiz.replyInsert(replydto);
+				if(res>0) {
+					dailybiz.update_dailyanswer(updatedb_no);
+					System.out.println(dailybiz.update_dailyanswer(updatedb_no));
+				}
+			//	return replybiz.replyInsert(replydto);
+				System.out.println(res+"res확인:controller");
+				return res;
 			}
 			// 댓글 수정
 			@RequestMapping("/replyupdate.do")

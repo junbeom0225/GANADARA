@@ -94,5 +94,33 @@ public class DailyBoardDaoImpl implements DailyBoardDao {
 		return res;
 	}
 
+	@Override
+	public List<MemberDto> studentList(int member_no) {
+		List<MemberDto> list = null;
+		try {
+			list = sqlSession.selectList(NAMESPACE + "studentList", member_no);
+			for(MemberDto dto : list) {
+				System.out.println("dailyBoardImpl: " + dto.getMember_no());
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+	@Override
+	public int update_dailyanswer(int db_no) {
+		int res = 0;
+		try {
+			res = sqlSession.update(NAMESPACE+"update_dailyanswer", db_no);
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("dailyanswer확인(Y): dao");
+		}
+		return res;
+		
+		
+	}
+
 	
 }

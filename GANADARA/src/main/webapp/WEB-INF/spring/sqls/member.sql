@@ -21,6 +21,7 @@ CREATE TABLE MEMBER(
 	CONSTRAINT MEM_NO FOREIGN KEY(MENTO_NO) REFERENCES MEMBER(MEMBER_NO)
 );
 
+UPDATE MEMBER SET MEMBER_NIC = 'Lisa' WHERE MEMBER_EMAIL = 'ggg@gggg.com';
 
 CREATE SEQUENCE MEMBERSEQ;
 CREATE TABLE MEMBER(
@@ -49,7 +50,7 @@ DROP TABLE MULTI_CHAT;
 
 select * from multi_chat;
 select * from ORDER_DAILY;
-select * from member
+select * from member;
 insert into member
 values(memberseq.nextval, 'admin', 'admin', 'dahye90@gmail.com', 'admin', '010-2456-3715', 
        '19651228', 'ANTARCTICA', SYSDATE, 'N', 'ADMIN', 'N', NULL, 'Y')

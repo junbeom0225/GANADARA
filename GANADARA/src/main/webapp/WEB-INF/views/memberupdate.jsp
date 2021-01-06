@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<link href="./resources/css/assets/memberupdate.css" rel="stylesheet" type="text/css">
 <script type="text/javascript">
 
 //member_pw 정규식 - A~Z, a~z, 0~9로 시작하는 4~12자리 비밀번호
@@ -109,7 +110,35 @@ $(document).ready(function(){
 });
 </script>
 </head>
-<body>
+<body id="top" class="is-preload">
+	<!-- Banner -->
+	<!--
+				To use a video as your background, set data-video to the name of your video without
+				its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+				formats to work correctly.
+			-->
+	<!-- Header -->
+	<header id="header">
+		<a class="logo" href="index.jsp">home</a>
+		<nav>
+			<a href="#menu">Menu</a>
+		</nav>
+	</header>
+
+	<!-- Nav -->
+	<nav id="menu">
+		<ul class="links">
+			<li><a href="eduhome.do">한국어학습</a></li>
+			<li><a href="#">글쓰기첨삭</a></li>
+			<li><a href="#">타자연습</a></li>
+			<li><a href="mypage.do">마이페이지</a></li>
+			<li><a href="logout.do">로그아웃</a></li>
+		</ul>
+	</nav>
+	<br/>
+	<br/>
+	<br/>
+
 <!-- String member_name, String member_nic, String member_email, String member_pw, 
 	String member_tel, String member_birth, String member_con, String member_role, 
 	String member_daily -->
@@ -120,42 +149,42 @@ $(document).ready(function(){
 				<div class="form">
 					<input type="text" id="member_email" name="member_email" value="${login.member_email }" readonly="readonly"/>
 				</div>
-				
+			<br/>
 				<label for="member_pw">비밀번호</label>
 				<div class="form">
 					<input type="password" id="member_pw" name="member_pw" />
 					<div class="check_font" id="pw_check"></div>
 				</div>
-				
+			<br/>
 				<label for="member_pw2">비밀번호 확인</label>
 				<div class="form">
 					<input type="password" id="member_pw2" name="member_pw2" />
 					<div class="check_font" id="pw_check2"></div>
 				</div>
-				
+			<br/>
 				<label for="member_name">영문이름</label>
 				<div class="form">
 					<input type="text" id="member_name" name="member_name" value="${login.member_name }"/>
 					<div class="check_font" id="name_check"></div>
 				</div>
-				
+			<br/>
 				<label for="member_nic">닉네임</label>
 				<div class="form">
 					<input type="text" id="member_nic" name="member_nic" value="${login.member_nic }" readonly="readonly"/>
 				</div>
-				
+			<br/>
 				<label for="member_tel">전화번호</label>
 				<div class="form">
 					<input type="text" id="member_tel" name="member_tel" value="${login.member_tel }" />
 					<div class="check_font" id="phone_check"></div>
 				</div>
-				
+			<br/>
 				<label for="member_birth">생년월일</label>
 				<div class="form">
 					<input type="text" id="member_birth" name="member_birth" value="${login.member_birth }" />
 					<div class="check_font" id="birth_check"></div>
 				</div>
-				
+			<br/>
 				<label for="member_con">국적</label>
 				<div class="form">
 					<select name="member_con" class="regist_form">
@@ -167,22 +196,56 @@ $(document).ready(function(){
 						<option value="ANTARCTICA">ANTARCTICA</option>
 					</select>
 				</div>
-				
+			<br/>
 				<label for="member_role">가입 정보</label>
 				<div class="form">
 					<input type="text" id="member_role" name="member_role" value="${login.member_role }" readonly="readonly"/>
 				</div>
-				
+			<br/>
 				<label for="member_daily">첨삭 서비스 이용여부</label>
 				<div class="form">
 					<input type="text" id="member_daily" name="member_daily" value="${login.member_daily }" readonly="readonly"/>
 				</div>
-			
+			<br/>
 				<div>
 					<input type="submit" value="수정" />
 					<input type="button" value="취소" onclick="location.href='mainform.do'" />
 				</div>
 		</div>
 	</form>
+	<br/>
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<h2>가나다라마바사아자차카타파하</h2>
+			<p>가나다라 한국어 학습은 최희선, 황다혜, 최소연, 황다혜, 박준범, 박건웅을 도움으로 제작되었습니다만, 제작물
+				중 저작권은..아무것도 우리에게 없어요. 파이널 도대체 언제 끝날까요. 메리크리스마스...</p>
+
+			<ul class="icons">
+				<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon fa-facebook"><span
+						class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon fa-instagram"><span
+						class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon fa-envelope"><span
+						class="label">Email</span></a></li>
+			</ul>
+			<p class="copyright">
+				&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>.
+				Images: <a href="https://unsplash.com/">Unsplash</a>. Videos: <a
+					href="http://coverr.co/">Coverr</a>.
+			</p>
+		</div>
+	</footer>
+	
+	<!-- Scripts -->
+	<script src="resources/js/assets/breakpoints.min.js"></script>
+	<script src="resources/js/assets/jquery.min.js"></script>
+	<script src="resources/js/assets/jquery.scrolly.min.js"></script>
+	<script src="resources/js/assets/jquery.poptrox.min.js"></script>
+	<script src="resources/js/assets/skel.min.js"></script>
+	<script src="resources/js/assets/util.js"></script>
+	<script src="resources/js/assets/main.js"></script>
+	<script src="resources/js/assets/browser.min.js"></script>
 </body>
 </html>

@@ -1,5 +1,9 @@
 package com.gana.dara.dao;
 
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -93,7 +97,7 @@ public class MemberDaoImpl implements MemberDao {
 		
 		return res;
 	}
-	/*
+	
 	@Override
 	public int GetKey(String member_email, String member_key) {
 		int res = 0;
@@ -106,20 +110,6 @@ public class MemberDaoImpl implements MemberDao {
 		
 		return res;
 	}
-
-	@Override
-	public int alter_memberKey(MemberDto dto, String key) {
-		int res = 0;
-		try {
-			res = sqlSession.update(NAMESAPCE + "alter_memberKey", dto);
-		} catch (Exception e) {
-			System.out.println("[ERROR] GetKey");
-			e.printStackTrace();
-		}
-		
-		return res;
-	}
-	*/
 
 	@Override
 	public int DailyService(String member_email) {
@@ -147,6 +137,37 @@ public class MemberDaoImpl implements MemberDao {
 		
 		return mm;
 	}
+
+	@Override
+	public MemberDto get_searchId(MemberDto dto) {
+	
+		MemberDto res = null;
+		
+		try {
+			res = sqlSession.selectOne(NAMESAPCE + "searchId", dto);
+		} catch (Exception e) {
+			System.out.println("[ERROR] serachId");
+			e.printStackTrace();
+		}
+		System.out.println(res.getMember_email() + "dao");
+		return res;
+	}
+
+	@Override
+	public List<MemberDto> studentList(int member_no) {
+		List<MemberDto> list = null;
+		try {
+			list = sqlSession.selectList(NAMESAPCE + "studentList", member_no);
+			for(MemberDto dto : list) {
+				System.out.println(dto.getMember_role());
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+
 	
 
 	

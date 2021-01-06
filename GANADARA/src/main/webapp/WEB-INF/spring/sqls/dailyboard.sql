@@ -26,3 +26,5 @@ VALUES(DAILYBOARDSEQ.NEXTVAL, 1, 'TEST2', 'TEST-CONTENT2',
        SYSDATE, 'N')
        
 SELECT * FROM DAILY_BOARD       
+
+delete from daily_board where db_no = 44

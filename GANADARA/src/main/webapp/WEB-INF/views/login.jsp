@@ -9,8 +9,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.2.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <link href="./resources/css/assets/login.css" rel="stylesheet" type="text/css">
 <script type="text/javascript">
 	$(function(){
@@ -64,8 +64,8 @@
 <body>
 	<div class="sidenav">
          <div class="login-main-text">
-            <h2>GANADARA<br> Login Page</h2>
-            <p>Login or register from here to access.</p>
+            <h2> GANADARA <br> 로그인 페이지 </h2>
+            <p>가나다라에 로그인하고 다양한 서비스들을 이용해 보세요!</p>
          </div>
       </div>
       <div class="main">
@@ -88,15 +88,20 @@
                   
                   <button type="button" class="btn btn-black" onclick="login();">Login</button>
                   <button type="button" class="btn btn-secondary" onclick="location.href='register.do'">Register</button>
-                  
+                  <br/>
+                  <br/>
                   
                   <!-- 네이버 로그인 화면으로 이동 시키는 URL -->
 				  <!-- 네이버 로그인 화면에서 ID, PW를 올바르게 입력하면 callback 메소드 실행 요청 -->
-				<div id="naver_id_login" style="text-align:center"><a href="${url}">
-				<img width="223" src="./resources/css/images/naver_White.PNG"/>
+				
+                <div id="naver_id_login" style="text-align:left"><a href="${url}" onclick="location.href='naver.do'">
+				<img width="223" src="./resources/css/images/naver_White.PNG" onclick="location.href='naver.do'" />
 				</a></div>
-                  
+				
                </form>
+               
+              
+				
             </div>
          </div>
       </div>

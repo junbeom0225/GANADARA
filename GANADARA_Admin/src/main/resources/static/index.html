@@ -40,9 +40,11 @@
       text-align: center;
     }
     .scene header h1{
-      font-size:2rem;
+      font-size:1rem;
       margin-bottom: 1rem;
-      font-weight: 300;
+      font-weight: 500;
+      float: right;
+      white-space: pre;
     }
     .scene header h1:after{
       content:'';
@@ -60,8 +62,8 @@
 	<!-- Sidebar -->
 	<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
  		 <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
-  		 <a href="admin.do/page/count" class="w3-bar-item w3-button" style="color:black">통계페이지</a>
-  		 <a href="admin.do/page/mento" class="w3-bar-item w3-button" style="color:black">멘토관리 페이지</a>
+  		 <a href="count" class="w3-bar-item w3-button" style="color:black">통계페이지</a>
+  		 <a href="mento" class="w3-bar-item w3-button" style="color:black">멘토관리 페이지</a>
   		 <a href="#" class="w3-bar-item w3-button" style="color:black">1:1채팅</a>
 	</div>
 		
@@ -72,54 +74,27 @@
 		    <h1>ADMIN PAGE</h1>
 		  </div>
 		</div>
-<!--  
-  	<div class="mWrap">	
-  		<div class="mContents" id="contents">
-  			<div class="parallax">
-  				<div class="mSection01"></div>
-  				
-  				<div class="mSection02"></div>
-  				
-  				<div class="mSection03"></div>
-  			</div>
-  		</div>
-  	</div>	
- -->	
+
   <div class="w3-container">
 	 	<section class="scene one">
 	    <header>
-	      <h1>한글은 홀소리와 닿소리 모두 소리틀을 본떠 만든 음소문자[1]로 한글 맞춤법에서는 닿소리 14개와 홀소리 10개, 모두 24개를 표준으로 삼는다. 
+	      <h1>"세계로 나아가는 한글" </h1> 
 	    </header>
 	  </section>
 	  <section class="scene two">
 	    <header>
-	      <h1>한글은 조선의 4대 왕인 세종대왕이 창제한 한국어의 문자이며, 한글은 자음 14자, 모음 10자이다. 훈민정음은 '백성을 가르치는 바른 소리'라는 뜻이다. 
+	      <h1>한글은 홀소리와 닿소리 모두 소리틀을 본떠 만든 음소문자로 
+	      <span class="em">한글 맞춤법에서는 닿소리 14개와 홀소리 10개, 모두 24개를</span> 표준으로 삼는다.</h1>
 	    </header>
 	  </section>
 	  <section class="scene three">
 	    <header>
-	      <h1>낱글자가 낱소리만 나타내므로 음소 문자이며 낱내로 초성, 중성, 종성을 묶어 모아 쓰기 때문에 음절 문자의 특성도 갖는다. </h1> 
+	      <h1>한글은 조선의 4대 왕인 세종대왕이 창제한 한국어의 문자이며, 한글은 자음 14자, 모음 10자이다. 
+	      <span>훈민정음은 '백성을 가르치는 바른 소리'라는 뜻이다.</span></h1> 
 	    </header>
 	  </section> 
   </div>	
-<!--  	
-		<main class="w3-container">
-			<p>
-			한글은 홀소리와 닿소리 모두 소리틀을 본떠 만든 음소문자[1]로 한글 맞춤법에서는 닿소리 14개와 홀소리 10개, 모두 24개를 표준으로 삼는다. "나랏말이 중국과 달라" 문제를 느낀 조선의 세종대왕이 한국어는 물론 이웃나라 말까지 나타내도록 1443년 창제하여 1446년 반포하였다. 
-			낱글자가 낱소리만 나타내므로 음소 문자이며 낱내로 초성, 중성, 종성을 묶어 모아 쓰기 때문에 음절 문자의 특성도 갖는다. 
-			한글 창제 초기에는 닿소리 17개에 홀소리 11개, 총 28개였으나, 뒤에 4개를 잃고 현재는 24개만 쓴다. 대한민국과 조선민주주의인민공화국, 옌볜 조선족 자치주에서는 공용 문자로, 인도네시아의 부톤 섬에서는 찌아찌아어의 보조 문자로 채택하였다. 
-			또한 조선민주주의인민공화국에서는 조선글이라 부른다.</p>
-			
-			<p>
-			한글은 조선의 4대 왕인 세종대왕이 창제한 한국어의 문자이며, 한글은 자음 14자, 모음 10자이다. 최초 세종이 한글을 만들었을 때 한글의 이름은 '훈민정음'(訓民正音)이다. 훈민정음은 '백성을 가르치는 바른 소리'라는 뜻이다. 
-			재러드 다이아몬드는 한글은 독창성이 있고 과학적인 문자라고 칭찬하였으며 노벨 문학상을 받은 펄 벅은 한글을 창제한 세종대왕은 '한국의 레오나르도 다 빈치'라며 극찬하였다.</p>
-			
-			<p>
-			한국은 삼국시대부터 이두(吏讀)와 구결(口訣)을 써 왔는데, 구결은 본래 한문에 구두(句讀)를 떼는 데 쓰기 위한 일종의 보조 편법에 지나지 않았고, 이두는 비록 한국어를 표시함에 틀림이 없었지만 한국어를 자유자재로 적을 수 없었으며,
-			 그 표기법의 일원성(一元性)이 없어서 설사 이두로써 족하다 해도 한자교육이 선행되어야 했다. 이러한 문자생활의 불편은 한자를 쓰지 않고도 배우기 쉽고 쓰기 쉬운 새로운 글자의 출현이 절실히 요구되었다.
-			</p>
-		</main>
-	-->		
+
 	<footer id="footer">
 		<div class="inner">
 			<h2>가나다라마바사아자차카타파하</h2>
@@ -147,8 +122,8 @@
 	<!-- Scripts -->
 	<script>
 	function w3_open() {
-		  document.getElementById("main").style.marginLeft = "25%";
-		  document.getElementById("mySidebar").style.width = "25%";
+		  document.getElementById("main").style.marginLeft = "15%";
+		  document.getElementById("mySidebar").style.width = "15%";
 		  document.getElementById("mySidebar").style.display = "block";
 		  document.getElementById("openNav").style.display = 'none';
 		}

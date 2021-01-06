@@ -1,5 +1,7 @@
 package com.gana.dara.biz;
 
+import java.util.List;
+
 import com.gana.dara.dto.MemberDto;
 
 public interface MemberBiz {
@@ -14,11 +16,8 @@ public interface MemberBiz {
 		public int NicCheck(String member_nic);
 		
 		//유저 인증키 생성
-		//public int GetKey(String member_email, String member_key);
-		
-		//유저 인증키 Y로 바꾸기
-		//public int alter_memberKey(String member_email, String key);
-		
+		public int GetKey(String member_email, String member_key);
+	
 		//로그인
 		public MemberDto Login(MemberDto dto);
 
@@ -31,6 +30,15 @@ public interface MemberBiz {
 		// 구매 후 멤버쉽(member_daily) 컬럼 변경
 		public int DailyService(String member_email);
 		
+		// member_role 데려오기
 		public String MemberRole(String member_role);
+		
+		// 아이디 찾기 이름, 전화번호
+		public MemberDto get_searchId(MemberDto dto);
+		
+		// 멘토 - 첨삭회원 가져오기 
+		public List<MemberDto> studentList(int member_no);
+
+
 
 }

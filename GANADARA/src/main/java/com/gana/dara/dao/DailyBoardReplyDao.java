@@ -20,15 +20,15 @@ public interface DailyBoardReplyDao {
 		//	public void replyDelete(MentoAnswerDto madto);
 		//	public MentoAnswerDto replySelectOne(int ma_no);
 			
-			//´ñ±Û ¸ñ·Ï
+			//ëŒ“ê¸€ëª©ë¡
 			public List<MentoAnswerDto> replyList(int db_no);
-			//´ñ±Û µî·Ï
+			//ëŒ“ê¸€ ë“±ë¡
 			public int replyInsert(MentoAnswerDto madto);
-			// ´ñ±Û °¹¼ö
+			// ëŒ“ê¸€ 
 			public int replyCount() throws Exception;
-			//´ñ±Û ¼öÁ¤
+			//ëŒ“ê¸€ ìˆ˜ì •
 			public int replyUpdate(MentoAnswerDto madto);
-			//´ñ±Û »èÁ¦
+			//ëŒ“ê¸€ ì‚­ì œ
 			public int replyDelete(int ma_no);	
 
 }
