@@ -84,6 +84,7 @@ $(function(){
 	</div>
 	<div>
 		<form id="scheduleData">
+			<input type="hidden" name="member_no" value="${member_no}">
 			<div>
 				<h3>제목</h3>
 			</div>

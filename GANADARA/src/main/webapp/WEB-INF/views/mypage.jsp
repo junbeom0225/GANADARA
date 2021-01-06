@@ -69,7 +69,7 @@
 						src="resources/img/assets/update.png" alt="" /></a>
 					<div class="inner">
 						<h3>일정 관리</h3>
-						<a href="calendar.do" class="button fit">일정 가기</a>
+						<a href="calendar.do?member_no=${login.member_no }" class="button fit">일정 가기</a>
 					</div>
 				</div>
 

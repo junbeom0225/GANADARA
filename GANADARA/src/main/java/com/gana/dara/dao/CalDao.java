@@ -9,7 +9,7 @@ public interface CalDao {
 	
 String NAMESPACE = "com.cal.";
 	
-	public List<CalDto> CalList();
+	public List<CalDto> CalList(int member_no);
 	public List<CalDto> selectOne(int cal_no);
 	public int insert(CalDto dto);
 	public int update(CalDto dto);

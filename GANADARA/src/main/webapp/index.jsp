@@ -24,10 +24,11 @@
 			-->
 	<!-- Header -->
 	<header id="header">
-		<a class="logo" href="index.jsp">home</a>
+		<a class="logo" href="index.jsp">home</a>		
 		<nav>
 			<a href="#menu">Menu</a>
 		</nav>
+				
 	</header>
 
 	<!-- Nav -->
@@ -136,6 +137,7 @@
 	<!-- Footer -->
 	<footer id="footer">
 		<div class="inner">
+		
 			<h2>가나다라마바사아자차카타파하</h2>
 			<p>가나다라 한국어 학습은 최희선, 황다혜, 최소연, 황다혜, 박준범, 박건웅을 도움으로 제작되었습니다만, 제작물
 				중 저작권은..아무것도 우리에게 없어요. 파이널 도대체 언제 끝날까요. 메리크리스마스...</p>
@@ -166,6 +168,7 @@
 	<script src="resources/js/assets/util.js"></script>
 	<script src="resources/js/assets/main.js"></script>
 	<script src="resources/js/assets/browser.min.js"></script>
+	
 
 </body>
 </html>

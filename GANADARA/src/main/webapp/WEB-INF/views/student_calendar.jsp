@@ -32,7 +32,8 @@
       locale:"ko",
       events: [
     	<c:forEach items="${list }" var="dto">
-    	  {
+    	  {	
+    		  groupId: "${dto.cal_no}",
     		  title: "${dto.cal_title}",
     		  start: "${dto.cal_mdate}",
     		  end: "${dto.cal_regdate}"
@@ -54,11 +55,18 @@
 
 </script>
 <script type="text/javascript">
+	var memberno = ${login.member_no };
 	function calInsert(){
-		var url = "calpop.do";
+		var url = "calpop.do?member_no="+memberno;
 		var name = "calendarinsert";
 		var option ="width= 500, height= 600, left= 200, top= 100";
 		
+		window.open(url,name,option)
+	}
+	function calDelete(){
+		var url = "caldelete.do?member_no="+memberno;
+		var name = "calendardelete";
+		var option ="width= 500, height= 600, left= 200, top= 100";
 		window.open(url,name,option)
 	}
 </script>
@@ -77,8 +85,7 @@
   }
 
 .add-button {
-  	position: absolute;
-  	top: 1px;
+  	top: 5px;
   	right: 230px;
   	background: #2C3E50;
   	border: 0;
@@ -86,6 +93,10 @@
   	height: 35px;
   	border-radius: 3px;
   	width: 157px;
+  }
+  #insertbutton {
+  	position: relative;
+  	
   }
   
 .fc-col-header-cell.fc-day.fc-day-sat .fc-col-header-cell-cushion { color:#0000FF; }
@@ -95,10 +106,18 @@
 .fc-daygrid-day.fc-day.fc-day-sat.fc-day-future .fc-daygrid-day-number { color:#0000FF; }     /* 토요일 */
 .fc-daygrid-day.fc-day.fc-day-sun.fc-day-future .fc-daygrid-day-number { color:#FF0000; } 
 </style>
-<body>
+<body id="top" class="is-preload">
+<%@ include file="../../resources/css/header.jsp"%>
+	<!-- Main -->
+	<div id="main">
+		<div class="inner">
 	<div id="calendar"></div>
-	<div>
+	<div id="insertbutton">
 		<button class="add-button" type="button" onclick="calInsert();">일정 추가</button>
+		<button class="add-button" type="button" onclick="calDelete();">일정 삭제</button>
 	</div>
+</div>
+</div>
+<%@ include file="../../resources/css/footer.jsp"%>
 </body>
 </html>

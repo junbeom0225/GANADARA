@@ -2,11 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cal">
 	
-	<select id="selectlist" resultType="CalDto">
-		SELECT CAL_NO, MEMBER_NO, CAL_TITLE, CAL_CONTENT, CAL_MDATE, CAL_REGDATE FROM CALENDAR ORDER BY CAL_NO DESC
+	<select id="selectlist" resultType="CalDto" parameterType="int">
+		SELECT CAL_NO, MEMBER_NO, CAL_TITLE, CAL_CONTENT, CAL_MDATE, CAL_REGDATE FROM CALENDAR WHERE MEMBER_NO = #{member_no}
 	</select>
 	<insert id="insert" parameterType="CalDto">
-		INSERT INTO CALENDAR VALUES()
+		INSERT INTO CALENDAR VALUES( CALSEQ.NEXTVAL, #{member_no}, #{cal_title}, #{cal_content}, #{cal_mdate}, #{cal_regdate} )
 	</insert>
+	<delete id="delete" parameterType="int">
+		DELETE FROM CALENDAR WHERE CAL_NO = #{cal_no}
+	</delete>
 
 </mapper>

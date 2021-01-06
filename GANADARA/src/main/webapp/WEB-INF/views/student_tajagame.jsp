@@ -8,34 +8,43 @@
 <title>Insert title here</title>
 </head>
 <style>
-	#userinfo{float: left; font-size : 30px; }
-	#gamebody{background-color: #E56D29; width: 1200px; height: 700px; margin-left: 150px;}
+	#userinfo{float: left; font-size : 30px; margin-left: 0px;}
+	#gamebody{background-color: #E56D29; width: 1200px; height: 700px; margin-left: 50px;}
 	#textbox{width:100%; height:95%; position:  relative;}
 	#inputbox{text-align: center; border-top-style: solid; border-top-color: black; padding-top: 5px;}
 	#buttonbox{display:inline-block}
 	#startbox{position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10000;}
-	
 </style>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<body>
-	<aside id="userinfo">
+<body id="top" class="is-preload">
+	<%@ include file="../../resources/css/header.jsp"%>
+	
+	<!-- Main -->
+	<div id="main" style="height: 850px;">
+		<div class="inner">
+	
+	<div id="userinfo">
 		<div id="score"></div>
 		<div id="life"></div>
-	</aside>
+	</div>
 	<input type="hidden" id="level">
 	<div id="gamebody">
 		<!-- 여기에 단어들 뿌려줄것이다 -->
 		<div id="textbox"></div>
 		<div id="startbox">
-				<button style="font-size: 60px; text-align: center;" id="gamestart">게임시작</button>
+				<button style="font-size: 60px; text-align: center; background-color:navy; ; border-radius: 3px;" id="gamestart">게임시작</button>
 			</div>
 		<div id="inputbox">
-			<div id="buttonbox">
-				<input type="text" id="inputtext">
+		<br>
+		<br>
+			<div id="buttonbox" >
+				<input type="text" id="inputtext" style="border-color: white;">
 			</div>
 		</div>
 	</div>
-
+</div>
+</div>
+<%@ include file="../../resources/css/footer.jsp"%>
 </body>
 <script type="text/javascript">
 	
@@ -85,6 +94,7 @@
 			life = 7;
 		}
 		lifeDiv.innerHTML = "LIFE : "+life;
+		$("#inputtext").focus();
 	});
 	
 	function drawWord(){

@@ -131,13 +131,17 @@ var keyscore;
 		//타자속도/점수
 		keyscore = (count + Scount + Tcount + Fcount) / timeresult * 60;
 		
-		alert("정확도:"+accuracy+" 타수:"+keyscore+" 시간:"+timeresult);
+		alert("정확도:"+Math.ceil(accuracy)+" 타수:"+Math.ceil(keyscore)+" 시간:"+timeresult+"초");
 		
 	}
 	
 </script>
 </head>
-<body>
+<body id="top" class="is-preload">
+	<%@ include file="../../resources/css/header.jsp"%>
+	<!-- Main -->
+<div id="main">
+	<div class="inner">
 	<div>
 			<c:forEach items="${listAll }" var="dto" end="0" step="1" >
 			<input type="text" maxlength="50" id="firstline" readonly="readonly" value="${dto.st_content}"></br>
@@ -156,6 +160,8 @@ var keyscore;
 			<input type="text" maxlength="50" id="fourthinput" value=""></br>
 			</c:forEach>
 	</div> 
-
+	</div>
+</div>
+<%@ include file="../../resources/css/footer.jsp"%>
 </body>
 </html>

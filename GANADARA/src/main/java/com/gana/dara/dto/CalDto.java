@@ -1,18 +1,17 @@
 package com.gana.dara.dto;
 
-import java.util.Date;
 
 public class CalDto {
 private int cal_no;
 private int member_no;
 private String cal_title;
 private String cal_content;
-private Date cal_mdate;
-private Date cal_regdate;
+private String cal_mdate;
+private String cal_regdate;
 public CalDto() {
 	super();
 }
-public CalDto(int cal_no, int member_no, String cal_title, String cal_content, Date cal_mdate, Date cal_regdate) {
+public CalDto(int cal_no, int member_no, String cal_title, String cal_content, String cal_mdate, String cal_regdate) {
 	this.cal_no = cal_no;
 	this.member_no = member_no;
 	this.cal_title = cal_title;
@@ -44,16 +43,16 @@ public String getCal_content() {
 public void setCal_content(String cal_content) {
 	this.cal_content = cal_content;
 }
-public Date getCal_mdate() {
+public String getCal_mdate() {
 	return cal_mdate;
 }
-public void setCal_mdate(Date cal_mdate) {
+public void setCal_mdate(String cal_mdate) {
 	this.cal_mdate = cal_mdate;
 }
-public Date getCal_regdate() {
+public String getCal_regdate() {
 	return cal_regdate;
 }
-public void setCal_regdate(Date cal_regdate) {
+public void setCal_regString(String cal_regdate) {
 	this.cal_regdate = cal_regdate;
 }
 

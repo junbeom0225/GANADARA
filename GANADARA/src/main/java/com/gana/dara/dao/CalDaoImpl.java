@@ -16,10 +16,10 @@ public class CalDaoImpl implements CalDao {
 	private SqlSessionTemplate sqlSession;
 
 	@Override
-	public List<CalDto> CalList() {
+	public List<CalDto> CalList(int member_no) {
 		List<CalDto> list = new ArrayList<CalDto>();
 		try {
-			list = sqlSession.selectList(NAMESPACE + "selectlist");
+			list = sqlSession.selectList(NAMESPACE + "selectlist",member_no);
 		} catch (Exception e) {
 			System.out.println("[ERROR] CalList");
 			e.printStackTrace();

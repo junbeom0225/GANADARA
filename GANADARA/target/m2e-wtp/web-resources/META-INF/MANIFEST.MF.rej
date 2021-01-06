@@ -1,9 +1,0 @@
-diff a/GANADARA/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF b/GANADARA/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF	(rejected hunks)
-@@ -1,5 +1,5 @@
- Manifest-Version: 1.0
--Built-By: cheryl
--Build-Jdk: 11.0.8
-+Built-By: junbe
-+Build-Jdk: 14.0.2
- Created-By: Maven Integration for Eclipse
- 
