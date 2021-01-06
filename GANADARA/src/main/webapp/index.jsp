@@ -25,6 +25,8 @@
 	<!-- Header -->
 	<header id="header">
 		<a class="logo" href="index.jsp">home</a>		
+		<div id="google_translate_element" class="hd_lang" style="background: #111111; height: 52px;"></div>
+		
 		<nav>
 			<a href="#menu">Menu</a>
 		</nav>
@@ -168,6 +170,36 @@
 	<script src="resources/js/assets/util.js"></script>
 	<script src="resources/js/assets/main.js"></script>
 	<script src="resources/js/assets/browser.min.js"></script>
+	<!-- Google 번역 -->
+	<script>
+		function googleTranslateElementInit() {
+			new google.translate.TranslateElement({
+				pageLanguage: 'ko',
+				includedLanguages: 'ko,zh-CN,zh-TW,ja,vi,th,tl,km,my,mn,ru,en,fr,ar',
+				layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+				autoDisplay: false
+			}, 'google_translate_element');
+		}
+	</script>
+	<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+	<!-- //Google 번역 -->
+	<style type="text/css">
+	.goog-te-gadget-simple {
+ 	margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: #111111;
+    height: 52px;
+    
+ }
+ 	.goog-te-gadget-simple span {
+ 	background-color: white;
+ 	
+ 	}
+ 	.goog-te-gadget-simple img {
+ 	display: none;
+ 	}
+</style>
 	
 
 </body>
